@@ -144,7 +144,7 @@ function init() {
     'map',
     {
       center: [55.75825332522441, 37.61908892590332],
-      zoom: 14,
+      zoom: 12,
     },
     {
       searchControlProvider: 'yandex#search',
