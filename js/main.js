@@ -51,11 +51,33 @@ function _iterableToArrayLimit(arr, i) {
 function _arrayWithHoles(arr) {
   if (Array.isArray(arr)) return arr;
 }
+$('#menu-open').on('click', function () {
+  $('#menu').toggleClass('active');
+});
+if (window.screen.width <= 768) {
+  var swiperHero = new Swiper('.hero__slider', {
+    speed: 800,
+    slidesPerView: 'auto',
+    spaceBetween: '4.6%',
+  });
+}
 var swiperProjects = new Swiper('.projects__slider', {
   speed: 800,
-  slidesPerGroup: 6,
-  slidesPerView: 6,
-  spaceBetween: '1.515%',
+  breakpoints: {
+    769: {
+      slidesPerGroup: 6,
+      slidesPerView: 6,
+      spaceBetween: '1.515%',
+    },
+    100: {
+      slidesPerGroup: 2,
+      slidesPerView: 2,
+      spaceBetween: '5.7%',
+      grid: {
+        rows: 2,
+      },
+    },
+  },
   navigation: {
     nextEl: '.projects__slider-btn--next',
     prevEl: '.projects__slider-btn--prev',
@@ -75,12 +97,13 @@ var swiperProjects = new Swiper('.projects__slider', {
 //   });
 // });
 
-$('.investment__tab').each(function () {
+$('.investment__tab-btn').each(function () {
   $(this).on('click', function () {
-    $('.investment__tab').each(function () {
+    $('.investment__tab, .investment__tab-btn').each(function () {
       $(this).removeClass('active');
     });
     $(this).addClass('active');
+    $('#'.concat($(this).data('tab'))).addClass('active');
   });
 });
 $('.projects__slide').each(function () {
@@ -92,51 +115,53 @@ $('.projects__slide').each(function () {
     $('[data-projecttabdesc="'.concat($(this).data('projecttab'), '"]')).addClass('active');
   });
 });
-var elemWheelVisible = false;
-var elemWheel = document.getElementById('investment');
-var observerInvestment = new IntersectionObserver(
-  function (_ref) {
-    var _ref2 = _slicedToArray(_ref, 1),
-      entry = _ref2[0];
-    return (elemWheelVisible = entry.isIntersecting);
-  },
-  {
-    threshold: [1],
-  }
-);
-observerInvestment.observe(document.getElementById('investment-box'));
-if (elemWheel.addEventListener) {
-  if ('onwheel' in document) {
-    // IE9+, FF17+, Ch31+
-    elemWheel.addEventListener('wheel', onWheel);
-  } else if ('onmousewheel' in document) {
-    // устаревший вариант события
-    elemWheel.addEventListener('mousewheel', onWheel);
+if (window.screen.width > 768) {
+  var onWheel = function onWheel(e) {
+    e = e || window.event;
+    var delta = e.deltaY || e.detail || e.wheelDelta;
+    var scroll = Math.sign(delta);
+    var activeEl = $('.investment__tab.active');
+    var prevEl = activeEl.prev();
+    var nextEl = activeEl.next();
+    if (scroll === -1 && prevEl.length !== 0) {
+      activeEl.removeClass('active');
+      prevEl.addClass('active');
+    } else if (scroll === 1 && nextEl.length !== 0) {
+      activeEl.removeClass('active');
+      nextEl.addClass('active');
+    }
+    if ((scroll === -1 && prevEl.length !== 0) || (scroll === 1 && nextEl.length !== 0))
+      e.preventDefault ? e.preventDefault() : (e.returnValue = false);
+    else return;
+  };
+  var elemWheelVisible = false;
+  var elemWheel = document.getElementById('investment');
+  var observerInvestment = new IntersectionObserver(
+    function (_ref) {
+      var _ref2 = _slicedToArray(_ref, 1),
+        entry = _ref2[0];
+      return (elemWheelVisible = entry.isIntersecting);
+    },
+    {
+      threshold: [1],
+    }
+  );
+  observerInvestment.observe(document.getElementById('investment-box'));
+  if (elemWheel.addEventListener) {
+    if ('onwheel' in document) {
+      // IE9+, FF17+, Ch31+
+      elemWheel.addEventListener('wheel', onWheel);
+    } else if ('onmousewheel' in document) {
+      // устаревший вариант события
+      elemWheel.addEventListener('mousewheel', onWheel);
+    } else {
+      // Firefox < 17
+      elemWheel.addEventListener('MozMousePixelScroll', onWheel);
+    }
   } else {
-    // Firefox < 17
-    elemWheel.addEventListener('MozMousePixelScroll', onWheel);
+    // IE8-
+    elemWheel.attachEvent('onmousewheel', onWheel);
   }
-} else {
-  // IE8-
-  elemWheel.attachEvent('onmousewheel', onWheel);
-}
-function onWheel(e) {
-  e = e || window.event;
-  var delta = e.deltaY || e.detail || e.wheelDelta;
-  var scroll = Math.sign(delta);
-  var activeEl = $('.investment__tab.active');
-  var prevEl = activeEl.prev();
-  var nextEl = activeEl.next();
-  if (scroll === -1 && prevEl.length !== 0) {
-    activeEl.removeClass('active');
-    prevEl.addClass('active');
-  } else if (scroll === 1 && nextEl.length !== 0) {
-    activeEl.removeClass('active');
-    nextEl.addClass('active');
-  }
-  if ((scroll === -1 && prevEl.length !== 0) || (scroll === 1 && nextEl.length !== 0))
-    e.preventDefault ? e.preventDefault() : (e.returnValue = false);
-  else return;
 }
 ymaps.ready(init);
 function init() {
@@ -166,6 +191,13 @@ function init() {
     }
   );
   map.geoObjects.add(placemark);
+  map
+    .panTo([55.75825332522441, 37.61908892590332], {
+      flying: true,
+    })
+    .then(function () {
+      map.setZoom(12);
+    });
 
   // Убираем все элементы управления с карты
   map.controls.remove('searchControl');

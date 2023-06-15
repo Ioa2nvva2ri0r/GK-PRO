@@ -59,6 +59,36 @@
             <li class="nav__item"><a class="nav__link us-link" href="contacts">Контакты</a></li>
           </ul>
           <a class="nav__tel us-link mobile" href="tel:+83433430661">8 (343) 343-06-61</a>
+          <div class="nav__img-box mobile">
+            <svg width="375" height="250" viewbox="0 0 375 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.6">
+                <path d="M836.39 228.641H14.0317L177.033 2H-162.672" stroke="url(#paint0_linear_691_40590)" stroke-width="3"></path>
+                <path d="M835.038 238.321H25.042L188.043 11.6794H-163.704" stroke="url(#paint1_linear_691_40590)" stroke-width="3"></path>
+                <path d="M846.051 248H36.0544L199.056 21.3586H-167" stroke="url(#paint2_linear_691_40590)" stroke-width="3"></path>
+              </g>
+              <defs>
+                <lineargradient id="paint0_linear_691_40590" x1="-179.16" y1="236.882" x2="815.574" y2="236.96" gradientunits="userSpaceOnUse">
+                  <stop stop-color="#F34C58" stop-opacity="0"></stop>
+                  <stop offset="0.666667" stop-color="#F34C58"></stop>
+                  <stop offset="1" stop-color="#F3414E" stop-opacity="0"></stop>
+                </lineargradient>
+                <lineargradient id="paint1_linear_691_40590" x1="-180.186" y1="246.562" x2="814.229" y2="246.639" gradientunits="userSpaceOnUse">
+                  <stop stop-color="#F34C58" stop-opacity="0"></stop>
+                  <stop offset="0.666667" stop-color="#F34C58"></stop>
+                  <stop offset="1" stop-color="#F3414E" stop-opacity="0"></stop>
+                </lineargradient>
+                <lineargradient id="paint2_linear_691_40590" x1="-183.718" y1="256.241" x2="824.944" y2="256.32" gradientunits="userSpaceOnUse">
+                  <stop stop-color="#F34C58" stop-opacity="0"></stop>
+                  <stop offset="0.666667" stop-color="#F34C58"></stop>
+                  <stop offset="1" stop-color="#F3414E" stop-opacity="0"></stop>
+                </lineargradient>
+              </defs>
+            </svg>
+            <picture>
+              <source class="nav__img" srcset="img/hero/cube.webp" />
+              <img class="nav__img" src="img/hero/cube.webp" alt="Куб" />
+            </picture>
+          </div>
         </nav>
         <a class="header__tel us-link desktop" href="tel:+83433430661">8 (343) 343-06-61</a>
         <button class="header__burger mobile" id="menu-open">
@@ -70,7 +100,117 @@
     </header>
   </body>
 </html>
-<main></main>
+<main>
+  <section class="contacts-main">
+    <div class="contacts-main__container container">
+      <h1 class="contacts-main__title us-title">контакты</h1>
+      <ul class="contacts-main__list">
+        <li class="contacts-main__item">
+          <a class="contacts-main__desc" href="tel:+73433430661">+7 (343) 343-06-61</a
+          ><span class="contacts-main__icon">
+            <svg width="24" height="24">
+              <use xlink:href="img/sprite.svg#phone"></use></svg
+          ></span>
+        </li>
+        <li class="contacts-main__item">
+          <address class="contacts-main__desc">Екатеринбург, БЦ «Президент», улица Бориса Ельцина, 1а</address>
+          <span class="contacts-main__icon">
+            <svg width="24" height="24">
+              <use xlink:href="img/sprite.svg#location"></use></svg
+          ></span>
+        </li>
+        <li class="contacts-main__item">
+          <a class="contacts-main__desc" href="mailto:invest@progr.ru">invest@progr.ru</a
+          ><span class="contacts-main__icon">
+            <svg width="24" height="24">
+              <use xlink:href="img/sprite.svg#mail"></use></svg
+          ></span>
+        </li>
+      </ul>
+    </div>
+    <div class="contacts-main__map-container">
+      <div class="contacts-main__map" id="map"></div>
+    </div>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=en_US" type="text/javascript"></script>
+  </section>
+  <section class="contact container contact-page">
+    <div class="contact__container">
+      <div class="contact__box--left">
+        <h2 class="contact__title us-title">связаться</h2>
+        <p class="contact__desc">оставьте свои контакты, и наш менеджер свяжется с вами в ближайшее время</p>
+        <svg class="desktop" width="1608" height="182" viewbox="0 0 1608 182" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1608 252H416.5L724 2H-627" stroke="url(#paint0_linear_779_134)" stroke-width="3"></path>
+          <path d="M1608 287H416.5L724 37H-627" stroke="url(#paint1_linear_779_134)" stroke-width="3"></path>
+          <path d="M1608 322H416.5L724 72H-627" stroke="url(#paint2_linear_779_134)" stroke-width="3"></path>
+          <defs>
+            <lineargradient id="paint0_linear_779_134" x1="-663.885" y1="261.091" x2="1561.43" y2="261.441" gradientunits="userSpaceOnUse">
+              <stop stop-color="#F34C58" stop-opacity="0"></stop>
+              <stop offset="0.666667" stop-color="#F34C58"></stop>
+              <stop offset="1" stop-color="#F3414E" stop-opacity="0"></stop>
+            </lineargradient>
+            <lineargradient id="paint1_linear_779_134" x1="-663.885" y1="296.091" x2="1561.43" y2="296.441" gradientunits="userSpaceOnUse">
+              <stop stop-color="#F34C58" stop-opacity="0"></stop>
+              <stop offset="0.666667" stop-color="#F34C58"></stop>
+              <stop offset="1" stop-color="#F3414E" stop-opacity="0"></stop>
+            </lineargradient>
+            <lineargradient id="paint2_linear_779_134" x1="-663.885" y1="331.091" x2="1561.43" y2="331.441" gradientunits="userSpaceOnUse">
+              <stop stop-color="#F34C58" stop-opacity="0"></stop>
+              <stop offset="0.666667" stop-color="#F34C58"></stop>
+              <stop offset="1" stop-color="#F3414E" stop-opacity="0"></stop>
+            </lineargradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="contact__box--right">
+        <form class="contact__form">
+          <label class="contact__label" for="name"
+            ><span class="placeholder">Имя</span> <input class="contact__input" id="name" type="text" name="name" placeholder="Имя" /><span></span>
+          </label>
+          <label class="contact__label" for="tel"
+            ><span class="placeholder">Телефон</span>
+            <input class="contact__input" id="tel" type="tel" name="tel" placeholder="Телефон" /><span></span>
+          </label>
+          <label class="contact__label" for="e-mail"
+            ><span class="placeholder">e-mail</span>
+            <input class="contact__input" id="e-mail" type="email" name="e-mail" placeholder="e-mail" /><span></span>
+          </label>
+          <p class="contact__form-desc">Нажимая кнопку «Отправить заявку», я даю свое согласие на обработку моих данных на условиях соглашения</p>
+          <button class="contact__btn us-btn">
+            <span class="contact__btn--desc">отправить заявку</span
+            ><span class="contact__btn--animate"> <span></span><span></span><span></span></span>
+          </button>
+        </form>
+      </div>
+      <svg class="mobile" width="343" height="98" viewbox="0 0 343 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <mask id="mask0_691_42623" style="mask-type: alpha" maskunits="userSpaceOnUse" x="0" y="0" width="343" height="98">
+          <rect x="343" y="98" width="343" height="98" transform="rotate(180 343 98)" fill="#D9D9D9"></rect>
+        </mask>
+        <g mask="url(#mask0_691_42623)">
+          <path d="M0 25H340L198.521 240" stroke="url(#paint0_linear_691_42623)" stroke-width="2"></path>
+          <path d="M1 18H329L188.367 230" stroke="url(#paint1_linear_691_42623)" stroke-width="2"></path>
+          <path d="M0 8.00001H321L179.519 223" stroke="url(#paint2_linear_691_42623)" stroke-width="2"></path>
+        </g>
+        <defs>
+          <lineargradient id="paint0_linear_691_42623" x1="332.037" y1="22.0757" x2="8.22995" y2="21.2124" gradientunits="userSpaceOnUse">
+            <stop stop-color="#F34C58" stop-opacity="0.2"></stop>
+            <stop offset="0.666667" stop-color="#F34C58"></stop>
+            <stop offset="1" stop-color="#F34C58" stop-opacity="0"></stop>
+          </lineargradient>
+          <lineargradient id="paint1_linear_691_42623" x1="321.318" y1="15.1165" x2="8.93939" y2="14.3017" gradientunits="userSpaceOnUse">
+            <stop stop-color="#F34C58" stop-opacity="0.2"></stop>
+            <stop offset="0.666667" stop-color="#F34C58"></stop>
+            <stop offset="1" stop-color="#F34C58" stop-opacity="0"></stop>
+          </lineargradient>
+          <lineargradient id="paint2_linear_691_42623" x1="313.482" y1="5.07574" x2="7.76981" y2="4.30618" gradientunits="userSpaceOnUse">
+            <stop stop-color="#F34C58" stop-opacity="0.2"></stop>
+            <stop offset="0.666667" stop-color="#F34C58"></stop>
+            <stop offset="1" stop-color="#F34C58" stop-opacity="0"></stop>
+          </lineargradient>
+        </defs>
+      </svg>
+    </div>
+  </section>
+</main>
 <footer class="footer">
   <div class="footer__box--top">
     <div class="footer__container container">
