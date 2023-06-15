@@ -641,7 +641,7 @@ input[type='search']::-webkit-search-results-decoration {
     width: 20.2rem;
     height: 6.54rem;
     margin-right: 0;
-    margin-bottom: 4.4rem;
+    margin-bottom: 4.3rem;
   }
   .footer__nav-list,
   .footer__contact-list {
@@ -655,7 +655,7 @@ input[type='search']::-webkit-search-results-decoration {
   }
   .footer__nav-list {
     gap: 2.95rem;
-    margin-left: -3rem;
+    margin-left: -2rem;
   }
   .footer__nav-item {
     width: 100%;
@@ -1157,7 +1157,7 @@ input[type='search']::-webkit-search-results-decoration {
   }
   .contact__container > svg {
     width: 100%;
-    height: 19.6rem;
+    height: 15.8rem;
   }
   .contact__box--left,
   .contact__box--right {
@@ -3364,6 +3364,7 @@ input[type='search']::-webkit-search-results-decoration {
   border-top: 0.1rem solid var(--white);
 }
 .contacts-main__item {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3375,10 +3376,6 @@ input[type='search']::-webkit-search-results-decoration {
   -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
   padding-top: 4.1rem;
-}
-.contacts-main__item:first-child,
-.contacts-main__item:nth-child(2) {
-  position: relative;
 }
 .contacts-main__item:first-child::before,
 .contacts-main__item:nth-child(2)::before {
@@ -3543,6 +3540,15 @@ input[type='search']::-webkit-search-results-decoration {
   .contacts-main__item::before {
     content: none !important;
   }
+  .contacts-main__item::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0.2rem;
+    background-image: url("data:image/svg+xml,%3Csvg width='343' height='1' viewBox='0 0 343 1' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline y1='-0.5' x2='343' y2='-0.5' transform='matrix(-1 0 0 1 343 1)' stroke='url(%23paint0_linear_897_58930)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_897_58930' x1='355.525' y1='6.18306e+06' x2='-217.747' y2='6.18306e+06' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='white'/%3E%3Cstop offset='0.716667' stop-color='white' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
+  }
   .contacts-main__icon {
     width: 10rem;
     height: 10rem;
@@ -3592,6 +3598,18 @@ input[type='search']::-webkit-search-results-decoration {
   margin-bottom: 2.8rem;
   font-size: 6rem;
   line-height: 110%;
+}
+@media (max-width: 48em) {
+  .contact-page {
+    margin-bottom: 0;
+  }
+  .contact-page .contact__box--left {
+    padding-top: 5.2rem;
+  }
+  .contact-page .contact__title {
+    margin-bottom: 2rem;
+    letter-spacing: -0.03em;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
