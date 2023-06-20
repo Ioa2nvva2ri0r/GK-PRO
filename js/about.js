@@ -26,26 +26,46 @@ var getEvery = function getEvery(arr, gap) {
   );
 };
 var slidesHistory = document.querySelectorAll('.history__slide');
-var everyFourStart = getEvery(slidesHistory, window.screen.width <= 768 ? 2 : 4);
-var everyFourEnd = getEvery(Array.from(slidesHistory).reverse(), window.screen.width <= 768 ? 2 : 4);
-everyFourStart.forEach(function (el) {
-  el.addEventListener('mouseenter', function () {
-    swiperMassHistory.slideNext();
-  });
-});
-everyFourEnd.forEach(function (el) {
-  el.addEventListener('mouseenter', function () {
-    swiperMassHistory.slidePrev();
-  });
-});
-document.querySelectorAll('.history__year').forEach(function (el, index) {
-  el.addEventListener('mouseenter', function () {
-    slidesHistory.forEach(function (el) {
-      return el.classList.remove('active');
+if (window.screen.width <= 768) {
+  slidesHistory.forEach(function (el, index, arr) {
+    el.addEventListener('click', function () {
+      var prevEl = el.previousElementSibling;
+      var firstElIndex = index !== 0;
+      var endElIndex = index !== Array.from(arr).length - 1;
+      if (prevEl && prevEl.classList.contains('active') && endElIndex) {
+        swiperMassHistory.slideNext();
+      }
+      if (el.classList.contains('active') && firstElIndex && endElIndex) {
+        swiperMassHistory.slidePrev();
+      }
+      arr.forEach(function (el) {
+        return el.classList.remove('active');
+      });
+      el.classList.add('active');
     });
-    slidesHistory[index].classList.add('active');
   });
-});
+} else {
+  var everyFourStart = getEvery(slidesHistory, 4);
+  var everyFourEnd = getEvery(Array.from(slidesHistory).reverse(), 4);
+  everyFourStart.forEach(function (el) {
+    el.addEventListener('mouseenter', function () {
+      swiperMassHistory.slideNext();
+    });
+  });
+  everyFourEnd.forEach(function (el) {
+    el.addEventListener('mouseenter', function () {
+      swiperMassHistory.slidePrev();
+    });
+  });
+  document.querySelectorAll('.history__year').forEach(function (el, index) {
+    el.addEventListener('mouseenter', function () {
+      slidesHistory.forEach(function (el) {
+        return el.classList.remove('active');
+      });
+      slidesHistory[index].classList.add('active');
+    });
+  });
+}
 var swiperMassMedia = new Swiper('.mass-media__slider', {
   speed: 800,
   breakpoints: {

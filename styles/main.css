@@ -3885,6 +3885,13 @@ input[type='search']::-webkit-search-results-decoration {
     padding-left: 7rem;
     margin-right: 3.2rem;
   }
+  .history__slide:last-child .history__desc-box {
+    left: initial;
+    right: -1.6rem;
+  }
+  .history__slide:nth-last-child(2) .history__desc-box {
+    left: -7rem;
+  }
   .history__year--desc {
     font-size: 5.8rem;
     line-height: 6.4rem;
