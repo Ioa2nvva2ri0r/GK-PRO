@@ -87,16 +87,6 @@ var swiperProjects = new Swiper('.projects__slider', {
     nextSlideMessage: 'Вперёд',
   },
 });
-
-// $('.hero__tab').each(function () {
-//   $(this).on('click', function () {
-//     $('.hero__tab').each(function () {
-//       $(this).removeClass('active');
-//     });
-//     $(this).addClass('active');
-//   });
-// });
-
 $('.investment__tab-btn').each(function () {
   $(this).on('click', function () {
     $('.investment__tab, .investment__tab-btn').each(function () {
