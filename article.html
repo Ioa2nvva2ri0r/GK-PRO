@@ -30,7 +30,7 @@
     <meta name="apple-mobile-web-app-title" content="&#x413;&#x41A; PRO" />
     <link rel="yandex-tableau-widget" href="favicon/yandex-browser-manifest.json" />
     <!-- favicon-end-->
-    <title>ГК PRO - Контакты</title>
+    <title>ГК PRO - Детальная статьи</title>
     <!-- Jquery -->
     <script src="js/static/jquery_(3.7.0).min.js" defer></script>
     <!-- Swiper-Slider-->
@@ -98,42 +98,78 @@
   </body>
 </html>
 <main>
-  <section class="contacts-main">
-    <div class="contacts-main__container container">
-      <h1 class="contacts-main__title us-title">контакты</h1>
-      <ul class="contacts-main__list">
-        <li class="contacts-main__item">
-          <a class="contacts-main__desc" href="tel:+73433430661"
-            ><span class="contacts-main__icon">
-              <svg width="24" height="24">
-                <use xlink:href="img/sprite.svg#phone"></use></svg></span
-            >+7 (343) 343-06-61</a
+  <section class="article">
+    <div class="article__container container">
+      <div class="article__cube article__cube--left"><span></span><span></span><span></span></div>
+      <div class="article__cube article__cube--right"><span></span><span></span><span></span></div>
+      <div class="article__content--left">
+        <a class="article__back" href="#"
+          ><span class="article__back--icon">
+            <svg class="desktop" width="20" height="24">
+              <use xlink:href="img/sprite.svg#arrow-2"></use></svg></span
+          ><span class="article__back--desc">к статьям</span></a
+        >
+        <time class="article__date" datetime="19-05-2022">19.05.2022</time>
+      </div>
+      <div class="article__content">
+        <h1 class="article__title">Основатель ГК PRO Андрей Гончаров об инвестиционных перспективах в условиях санкций</h1>
+        <p class="article__desc">
+          <span
+            >Сейчас сложно говорить о среднесрочных трендах на рынке инвестиций. В условиях текущей ситуации тренд один — неопределенность. Если
+            говорить о долгосрочных трендах, то стоит отталкиваться от того, что Россия входит в десятку экономик стран мира. Наш рынок очень емкий,
+            он представляет собой огромное окно возможностей для инвестиций в акционерный капитал, как крупных компаний, так и малого и среднего
+            бизнеса (МСБ). В Германии, например, в сегменте МСБ ежегодно происходит 20 тыс. сделок по слиянию и поглощению, а в России только
+            сотни.</span
+          ><span
+            >За последние 30 лет в стране выросла плеяда талантливых предпринимателей. Российский бизнес вышел на такой уровень, что по качеству
+            товаров и услуг он абсолютно конкурентоспособен. Многие компании, особенно на Урале, имеют потенциал захвата не только российского рынка,
+            но и рынков стран СНГ, других стран. Рентабельность российских инвестиций достаточно высокая. Впрочем, этот показатель коррелируется с
+            высоким уровнем рисков. Но инвестировать в России крайне интересно. Сейчас самое время занимать ниши иностранных компаний, которые уходят
+            из страны. Многие российские игроки ведут сделки по покупке иностранных активов.</span
+          ><span
+            >Тренд импортозамещения интересен во всем, начиная от авиаотрасли и станкостроения, машиностроения. Перспективна сфера fashion-индустрии.
+            Сейчас ее покинуло более 100 иностранных брендов, высвобождается огромная поляна для развития российских компаний.</span
+          ><span
+            >Есть огромные перспективы развития в сельском хозяйстве. На данный момент около 4% в структуре ВВП страны занимает сельское хозяйство.
+            Потенциал роста есть и может дорасти до 12-15%. Более того, сейчас происходит некий отыгрыш справедливости на мировых продовольственных
+            рынках. Если раньше продукты стоили достаточно дешево, то ситуация сейчас меняется. По разным оценкам участников рынка, продукты питания
+            подорожают на 26-30% .</span
+          ><span
+            >Мировая частичная экономическая блокада России повлияла на всех, но в разной степени. В портфеле группы компаний PRO, например, есть
+            компания «Экопак», которая занимается производством бумажной упаковки. К сожалению, в России не производят пищевой картон для производства
+            бумажных стаканов. Надеюсь, эта ситуация скоро изменится, мы в этом направлении активно работаем с целлюлозно-бумажными комбинатами:
+            подсказываем эту нишу. Мы даже готовы инвестировать, создавать совместное предприятие.</span
           >
-        </li>
-        <li class="contacts-main__item">
-          <address class="contacts-main__desc">
-            <span class="contacts-main__icon">
-              <svg width="24" height="24">
-                <use xlink:href="img/sprite.svg#location"></use></svg></span
-            >Екатеринбург, БЦ «Президент», улица Бориса Ельцина, 1а
-          </address>
-        </li>
-        <li class="contacts-main__item">
-          <a class="contacts-main__desc" href="mailto:invest@progr.ru"
-            ><span class="contacts-main__icon">
-              <svg width="24" height="24">
-                <use xlink:href="img/sprite.svg#mail"></use></svg></span
-            >invest@progr.ru</a
-          >
-        </li>
-      </ul>
+        </p>
+      </div>
+      <div class="article__content--right"><a class="article__link" href="#">статья </a></div>
     </div>
-    <div class="contacts-main__map-container">
-      <div class="contacts-main__map" id="map"></div>
-    </div>
-    <script src="https://api-maps.yandex.ru/2.1/?lang=en_US" type="text/javascript"></script>
   </section>
-  <section class="contact container contact-page">
+  <section class="articles container">
+    <div class="articles__title-box">
+      <h2 class="articles__title us-title">читайте <span class="underline">также</span></h2>
+      <div class="articles__slider-btn-box">
+        <button class="articles__slider-btn _slider-btn--prev us-btn-slider">
+          <svg class="desktop" width="20" height="24">
+            <use xlink:href="img/sprite.svg#arrow-2"></use>
+          </svg>
+          <svg class="mobile" width="20" height="16">
+            <use xlink:href="img/sprite.svg#arrow"></use>
+          </svg>
+        </button>
+        <button class="articles__slider-btn _slider-btn--next us-btn-slider">
+          <svg class="desktop" width="20" height="24">
+            <use xlink:href="img/sprite.svg#arrow-2"></use>
+          </svg>
+          <svg class="mobile" width="20" height="16">
+            <use xlink:href="img/sprite.svg#arrow"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="articles__slider swiper"></div>
+  </section>
+  <section class="contact container article-page">
     <div class="contact__container">
       <div class="contact__box--left">
         <h2 class="contact__title us-title">связаться</h2>
@@ -209,6 +245,39 @@
         </defs>
       </svg>
     </div>
+  </section>
+  <section class="contacts">
+    <div class="contacts__map" id="map"></div>
+    <div class="contacts__content">
+      <h2 class="contacts__title">наши Контакты</h2>
+      <ul class="contacts__list">
+        <li class="contacts__item">
+          <a class="contacts__desc" href="tel:+73433430661"
+            ><span class="contacts__icon">
+              <svg width="24" height="24">
+                <use xlink:href="img/sprite.svg#phone"></use></svg></span
+            >+7 (343) 343-06-61</a
+          >
+        </li>
+        <li class="contacts__item">
+          <a class="contacts__desc" href="mailto:invest@progr.ru"
+            ><span class="contacts__icon">
+              <svg width="24" height="24">
+                <use xlink:href="img/sprite.svg#mail"></use></svg></span
+            >invest@progr.ru</a
+          >
+        </li>
+        <li class="contacts__item">
+          <address class="contacts__desc">
+            <span class="contacts__icon">
+              <svg width="24" height="24">
+                <use xlink:href="img/sprite.svg#location"></use></svg></span
+            >Екатеринбург, БЦ «Президент», улица Бориса Ельцина, 1а
+          </address>
+        </li>
+      </ul>
+    </div>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=en_US" type="text/javascript"></script>
   </section>
 </main>
 <footer class="footer">
