@@ -5097,7 +5097,7 @@ input[type='search']::-webkit-search-results-decoration {
   visibility: hidden;
   bottom: -26.7rem;
   z-index: -1;
-  width: 29rem;
+  width: 100%;
   height: 26.7rem;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(15.16%, rgba(157, 22, 46, 0.12)), color-stop(85.93%, rgba(229, 85, 79, 0)));
   background: -o-linear-gradient(top, rgba(157, 22, 46, 0.12) 15.16%, rgba(229, 85, 79, 0) 85.93%);
