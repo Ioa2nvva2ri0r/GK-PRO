@@ -162,6 +162,31 @@ if (document.querySelector('.history__slider')) {
     },
   });
 }
+if (document.querySelector('.articles__slider')) {
+  var swiperArticle = new Swiper('.articles__slider', {
+    speed: 800,
+    breakpoints: {
+      769: {
+        slidesPerGroup: 3,
+        slidesPerView: 3,
+        spaceBetween: '2.4%',
+      },
+      100: {
+        slidesPerGroup: 1,
+        slidesPerView: 1,
+        spaceBetween: '5%',
+      },
+    },
+    navigation: {
+      nextEl: '.articles__slider-btn--next',
+      prevEl: '.articles__slider-btn--prev',
+    },
+    a11y: {
+      prevSlideMessage: 'Назад',
+      nextSlideMessage: 'Вперёд',
+    },
+  });
+}
 $('#menu-open').on('click', function () {
   $('#menu').toggleClass('active');
 });
