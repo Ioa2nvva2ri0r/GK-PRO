@@ -44,16 +44,16 @@
   <body>
     <header class="header">
       <div class="header__container container">
-        <a class="header__logo" href="#">
+        <a class="header__logo" href="/">
           <svg width="323" height="55">
             <use xlink:href="img/sprite.svg#logo"></use></svg
         ></a>
         <nav class="nav" id="menu">
           <ul class="nav__list">
-            <li class="nav__item"><a class="nav__link us-link" href="about">О нас</a></li>
-            <li class="nav__item"><a class="nav__link us-link" href="projects">Проекты</a></li>
-            <li class="nav__item"><a class="nav__link us-link" href="smartmoney">Smartmoney</a></li>
-            <li class="nav__item"><a class="nav__link us-link" href="contacts">Контакты</a></li>
+            <li class="nav__item"><a class="nav__link us-link" href="about.html">О нас</a></li>
+            <li class="nav__item"><a class="nav__link us-link" href="projects.html">Проекты</a></li>
+            <li class="nav__item"><a class="nav__link us-link" href="smartmoney.html">Smartmoney</a></li>
+            <li class="nav__item"><a class="nav__link us-link" href="contacts.html">Контакты</a></li>
           </ul>
           <a class="nav__tel us-link mobile" href="tel:+83433430661">8 (343) 343-06-61</a>
           <div class="nav__img-box mobile">
@@ -99,15 +99,19 @@
 </html>
 <main>
   <section class="hero">
+    <video class="hero__video" preload="auto" muted loop poster="img/hero/video.webp" id="banner-video">
+      <source src="video/banner.mov" type="video/mov" />
+      <source src="video/banner.mp4" type="video/mp4" />
+    </video>
     <div class="hero__container container">
-      <div class="hero__content--top">
+      <div class="hero__content--top" id="content-hero">
         <h1 class="hero__title us-title"><span class="hero__title--red">SMART MONEY </span>для вашего <span class="underline">бизнеса</span></h1>
         <div class="hero__img-box">
-          <svg class="desktop" width="1752" height="425" viewbox="0 0 1752 425" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="desktop" width="100%" height="425" viewbox="0 0 1752 425" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g opacity="0.6">
-              <path d="M2025 45H372.155L699.768 423H17.0001" stroke="url(#paint0_linear_643_23590)" stroke-width="3"></path>
-              <path d="M2018 23H390.29L717.846 402H11" stroke="url(#paint1_linear_643_23590)" stroke-width="3"></path>
-              <path d="M2036 1.99999H408.093L735.688 380H2.88188e-05" stroke="url(#paint2_linear_643_23590)" stroke-width="3"></path>
+              <path class="svg-elem svg-elem-1" d="M2025 45H372.155L699.768 423H17.0001" stroke="url(#paint0_linear_643_23590)" stroke-width="3"></path>
+              <path class="svg-elem svg-elem-2" d="M2018 23H390.29L717.846 402H11" stroke="url(#paint1_linear_643_23590)" stroke-width="3"></path>
+              <path class="svg-elem svg-elem-3" d="M2036 1.99999H408.093L735.688 380H2.88188e-05" stroke="url(#paint2_linear_643_23590)" stroke-width="3"></path>
             </g>
             <defs>
               <lineargradient id="paint0_linear_643_23590" x1="-16.1383" y1="31.255" x2="1983.16" y2="31.0679" gradientunits="userSpaceOnUse">
