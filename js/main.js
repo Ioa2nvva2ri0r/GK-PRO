@@ -397,5 +397,41 @@ if (document.querySelector('.projects-main__tab')) {
     });
   });
 }
+if (document.querySelector('.smartmoney-investment')) {
+  var dropdownBtn = $('.smartmoney-investment__tab-box.active')
+    .children('.smartmoney-investment__dropdown-box')
+    .children('.smartmoney-investment__dropdown-btn');
+  var dropdownAll = $('.smartmoney-investment__dropdown--all');
+  $('.smartmoney-investment__tab').each(function () {
+    $(this).on('click', function () {
+      $('.smartmoney-investment__tab, .smartmoney-investment__tab-box').each(function () {
+        $(this).removeClass('active');
+      });
+      $(this).addClass('active');
+      $("[data-tab-smartmoney='".concat($(this).attr('id'), "']")).addClass('active');
+      dropdownBtn = $('.smartmoney-investment__tab-box.active')
+        .children('.smartmoney-investment__dropdown-box')
+        .children('.smartmoney-investment__dropdown-btn');
+      dropdownBtn.each(function () {
+        $(this).removeClass('active').next().slideUp();
+      });
+      dropdownAll.removeClass('hidden');
+    });
+  });
+  dropdownBtn.each(function () {
+    $(this).on('click', function () {
+      $(this).toggleClass('active').next().slideToggle();
+      if (dropdownBtn.not('.active').length === 0) dropdownAll.addClass('hidden');
+      if (dropdownBtn.last().hasClass('active')) dropdownAll.addClass('hidden');
+      else dropdownAll.removeClass('hidden');
+    });
+  });
+  dropdownAll.on('click', function () {
+    dropdownBtn.each(function () {
+      $(this).addClass('active').next().slideDown();
+    });
+    $(this).addClass('hidden');
+  });
+}
 
 //# sourceMappingURL=main.js.map
