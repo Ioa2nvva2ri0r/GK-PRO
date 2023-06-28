@@ -314,6 +314,13 @@ if (document.querySelector('.hero__slider')) {
     }
   }
 }
+if ($('#additionally-btn').length !== 0) {
+  $('#additionally-btn').on('click', function () {
+    $(this).toggleClass('active');
+    $('#additionally-box').toggleClass('active');
+    $('#industry').selectmenu();
+  });
+}
 ymaps.ready(init);
 function init() {
   var map = new ymaps.Map(

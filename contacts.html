@@ -33,6 +33,9 @@
     <title>ГК PRO - Контакты</title>
     <!-- Jquery -->
     <script src="js/static/jquery_(3.7.0).min.js" defer></script>
+    <!-- Jquery-UI-->
+    <link rel="stylesheet" href="styles/static/jquery-ui_(1.13.2).min.css" />
+    <script src="js/static/jquery-ui_(1.13.2).min.js" defer></script>
     <!-- Swiper-Slider-->
     <link rel="stylesheet" href="styles/static/swiper_(9.3.2).min.css" />
     <script src="js/static/swiper_(9.3.2).min.js" defer></script>
@@ -138,22 +141,22 @@
       <div class="contact__box--left">
         <h2 class="contact__title us-title">связаться</h2>
         <p class="contact__desc">оставьте свои контакты, и наш менеджер свяжется с вами в ближайшее время</p>
-        <svg class="desktop" width="1608" height="182" viewbox="0 0 1608 182" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1608 252H416.5L724 2H-627" stroke="url(#paint0_linear_779_134)" stroke-width="3"></path>
-          <path d="M1608 287H416.5L724 37H-627" stroke="url(#paint1_linear_779_134)" stroke-width="3"></path>
-          <path d="M1608 322H416.5L724 72H-627" stroke="url(#paint2_linear_779_134)" stroke-width="3"></path>
+        <svg class="desktop" width="1683" height="361" viewbox="0 0 1683 361" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2099.19 392.625H237.469L717.938 2H-1393" stroke="url(#paint0_linear_1349_33143)" stroke-width="3"></path>
+          <path d="M2109.19 427.313H247.469L727.938 36.6875H-1383" stroke="url(#paint1_linear_1349_33143)" stroke-width="3"></path>
+          <path d="M2109.19 472H247.469L727.938 81.375H-1383" stroke="url(#paint2_linear_1349_33143)" stroke-width="3"></path>
           <defs>
-            <lineargradient id="paint0_linear_779_134" x1="-663.885" y1="261.091" x2="1561.43" y2="261.441" gradientunits="userSpaceOnUse">
+            <lineargradient id="paint0_linear_1349_33143" x1="-1450.63" y1="406.829" x2="2026.43" y2="407.377" gradientunits="userSpaceOnUse">
               <stop stop-color="#F34C58" stop-opacity="0"></stop>
               <stop offset="0.666667" stop-color="#F34C58"></stop>
               <stop offset="1" stop-color="#F3414E" stop-opacity="0"></stop>
             </lineargradient>
-            <lineargradient id="paint1_linear_779_134" x1="-663.885" y1="296.091" x2="1561.43" y2="296.441" gradientunits="userSpaceOnUse">
+            <lineargradient id="paint1_linear_1349_33143" x1="-1440.63" y1="441.517" x2="2036.43" y2="442.064" gradientunits="userSpaceOnUse">
               <stop stop-color="#F34C58" stop-opacity="0"></stop>
               <stop offset="0.666667" stop-color="#F34C58"></stop>
               <stop offset="1" stop-color="#F3414E" stop-opacity="0"></stop>
             </lineargradient>
-            <lineargradient id="paint2_linear_779_134" x1="-663.885" y1="331.091" x2="1561.43" y2="331.441" gradientunits="userSpaceOnUse">
+            <lineargradient id="paint2_linear_1349_33143" x1="-1440.63" y1="486.204" x2="2036.43" y2="486.752" gradientunits="userSpaceOnUse">
               <stop stop-color="#F34C58" stop-opacity="0"></stop>
               <stop offset="0.666667" stop-color="#F34C58"></stop>
               <stop offset="1" stop-color="#F3414E" stop-opacity="0"></stop>
@@ -168,6 +171,25 @@
           <label class="contact__label" for="e-mail"
             ><span class="placeholder">e-mail</span> <input class="contact__input" id="e-mail" type="email" name="e-mail" placeholder="e-mail" /><span></span>
           </label>
+          <button class="contact__additionally active" id="additionally-btn" type="button">Дополнительно о компании</button>
+          <div class="contact__form-box" id="additionally-box">
+            <label class="contact__label" for="revenue"
+              ><span class="placeholder">выручка за год</span> <input class="contact__input" id="revenue" type="text" name="revenue" placeholder="выручка за год" /><span></span>
+            </label>
+            <label class="contact__label" for="industry">
+              <select class="contact__select" id="industry" name="industry">
+                <option>отрасль</option>
+                <option value="Экономика и учет">Экономика и учет</option>
+                <option value="Управленческая поддержка">Управленческая поддержка</option>
+              </select>
+            </label>
+            <label class="contact__label" for="investments"
+              ><span class="placeholder">объем инвестиций</span> <input class="contact__input" id="investments" type="text" name="investments" placeholder="объем инвестиций" /><span></span>
+            </label>
+            <label class="contact__label" for="target"
+              ><span class="placeholder">цель привлечения</span> <input class="contact__input" id="target" type="text" name="target" placeholder="цель привлечения" /><span></span>
+            </label>
+          </div>
           <p class="contact__form-desc">Нажимая кнопку «Отправить заявку», я даю свое согласие на обработку моих данных на условиях соглашения</p>
           <button class="contact__btn us-btn">
             <span class="contact__btn--desc">отправить заявку</span><span class="contact__btn--animate"> <span></span><span></span><span></span></span>
