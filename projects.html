@@ -103,7 +103,7 @@
 <main>
   <section class="projects-main">
     <div class="projects-main__container container">
-      <svg width="1683" height="420" viewbox="0 0 1683 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg class="desktop" width="1683" height="420" viewbox="0 0 1683 420" fill="none" xmlns="http://www.w3.org/2000/svg">
         <mask id="mask0_1051_111340" style="mask-type: alpha" maskunits="userSpaceOnUse" x="0" y="0" width="1683" height="420">
           <rect width="1683" height="420" fill="url(#paint0_linear_1051_111340)"></rect>
         </mask>
@@ -126,18 +126,70 @@
           </lineargradient>
         </defs>
       </svg>
+      <svg class="mobile" width="209" height="149" viewbox="0 0 209 149" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <mask id="mask0_1318_28658" style="mask-type: alpha" maskunits="userSpaceOnUse" x="0" y="0" width="209" height="149">
+          <rect width="209" height="149" fill="url(#paint0_linear_1318_28658)"></rect>
+        </mask>
+        <g mask="url(#mask0_1318_28658)">
+          <path d="M409 66H109.925L187.11 1H-152" stroke="url(#paint1_linear_1318_28658)" stroke-width="2"></path>
+          <path d="M414 75H114.925L192.11 10H-147" stroke="url(#paint2_linear_1318_28658)" stroke-width="2"></path>
+          <path d="M419 84H119.925L197.11 19H-142" stroke="url(#paint3_linear_1318_28658)" stroke-width="2"></path>
+        </g>
+        <defs>
+          <lineargradient id="paint0_linear_1318_28658" x1="104.562" y1="17.5738" x2="104.562" y2="52.0745" gradientunits="userSpaceOnUse">
+            <stop stop-color="#D9D9D9"></stop>
+            <stop offset="1" stop-color="#D9D9D9" stop-opacity="0"></stop>
+          </lineargradient>
+          <lineargradient id="paint1_linear_1318_28658" x1="-161.258" y1="68.3636" x2="397.311" y2="68.4485" gradientunits="userSpaceOnUse">
+            <stop offset="0.466667" stop-color="#F34C58" stop-opacity="0"></stop>
+            <stop offset="0.685417" stop-color="#F34C58"></stop>
+            <stop offset="1" stop-color="#F3414E" stop-opacity="0"></stop>
+          </lineargradient>
+          <lineargradient id="paint2_linear_1318_28658" x1="-156.258" y1="77.3636" x2="402.311" y2="77.4485" gradientunits="userSpaceOnUse">
+            <stop offset="0.466667" stop-color="#F34C58" stop-opacity="0"></stop>
+            <stop offset="0.685417" stop-color="#F34C58"></stop>
+            <stop offset="1" stop-color="#F3414E" stop-opacity="0"></stop>
+          </lineargradient>
+          <lineargradient id="paint3_linear_1318_28658" x1="-151.258" y1="86.3636" x2="407.311" y2="86.4485" gradientunits="userSpaceOnUse">
+            <stop offset="0.466667" stop-color="#F34C58" stop-opacity="0"></stop>
+            <stop offset="0.685417" stop-color="#F34C58"></stop>
+            <stop offset="1" stop-color="#F3414E" stop-opacity="0"></stop>
+          </lineargradient>
+        </defs>
+      </svg>
       <h1 class="projects-main__title us-title">Наши проекты</h1>
-      <ul class="projects-main__tabs">
-        <li class="projects-main__tab active"><strong>Все отрасли</strong></li>
-        <li class="projects-main__tab"><strong>fmcg</strong></li>
-        <li class="projects-main__tab"><strong>Сфера услуг</strong></li>
-        <li class="projects-main__tab"><strong>Легкая промышленность</strong></li>
-        <li class="projects-main__tab"><strong>Агро промышленность</strong></li>
-        <li class="projects-main__tab"><strong>Retail</strong></li>
-        <li class="projects-main__tab"><strong>Fashion</strong></li>
-        <li class="projects-main__tab"><strong>Общественное питание</strong></li>
-        <li class="projects-main__tab"><strong>Здравоохранение</strong></li>
-      </ul>
+      <div class="projects-main__dropdown">
+        <button class="projects-main__dropdown-btn mobile"><span>Все отрасли</span></button>
+        <ul class="projects-main__tabs">
+          <li class="projects-main__tab">
+            <a class="active projects-main__tab-link" href="#"><span> </span><strong>Все отрасли</strong></a>
+          </li>
+          <li class="projects-main__tab">
+            <a class="projects-main__tab-link" href="#"><span> </span><strong>fmcg</strong></a>
+          </li>
+          <li class="projects-main__tab">
+            <a class="projects-main__tab-link" href="#"><span> </span><strong>Сфера услуг</strong></a>
+          </li>
+          <li class="projects-main__tab">
+            <a class="projects-main__tab-link" href="#"><span> </span><strong>Легкая промышленность</strong></a>
+          </li>
+          <li class="projects-main__tab">
+            <a class="projects-main__tab-link" href="#"><span> </span><strong>Агро промышленность</strong></a>
+          </li>
+          <li class="projects-main__tab">
+            <a class="projects-main__tab-link" href="#"><span> </span><strong>Retail</strong></a>
+          </li>
+          <li class="projects-main__tab">
+            <a class="projects-main__tab-link" href="#"><span> </span><strong>Fashion</strong></a>
+          </li>
+          <li class="projects-main__tab">
+            <a class="projects-main__tab-link" href="#"><span> </span><strong>Общественное питание</strong></a>
+          </li>
+          <li class="projects-main__tab">
+            <a class="projects-main__tab-link" href="#"><span> </span><strong>Здравоохранение</strong></a>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="projects-main__slider-box">
       <span class="projects-main__shadow--left"></span>

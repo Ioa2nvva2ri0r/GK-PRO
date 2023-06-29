@@ -373,20 +373,57 @@ function init() {
   map.controls.remove('rulerControl');
 }
 if (document.querySelector('.projects-main__tab')) {
-  $('.projects-main__tab').each(function () {
+  var projectsTab = $('.projects-main__tab-link');
+  var projectsDropdownBtn = $('.projects-main__dropdown-btn');
+  var projectsDropdown = $('.projects-main__tabs');
+  projectsTab.each(function () {
     $(this).on('click', function () {
-      $('.projects-main__tab').each(function () {
+      projectsTab.each(function () {
         $(this).removeClass('active');
       });
       $(this).addClass('active');
+      if (window.screen.width < 768) {
+        projectsDropdownBtn.children('span').text($(this).text());
+        projectsDropdownBtn.removeClass('active');
+        projectsDropdownBtn.parent().removeClass('active');
+        projectsDropdown.slideUp();
+        $('body').css({
+          overflow: 'auto',
+        });
+      }
     });
   });
+  if (window.screen.width < 768) {
+    projectsDropdownBtn.on('click', function () {
+      $(this).toggleClass('active');
+      $(this).parent().toggleClass('active');
+      projectsDropdown.slideToggle();
+      if ($(this).hasClass('active'))
+        $('body').css({
+          overflow: 'hidden',
+        });
+      else
+        $('body').css({
+          overflow: 'auto',
+        });
+    });
+  }
   var swiperProjectsMain = new Swiper('.projects-main__slider', {
     speed: 800,
     loop: true,
     observer: true,
-    spaceBetween: '-20%',
     slidesPerView: 9,
+    breakpoints: {
+      769: {
+        slidesPerView: 9,
+        spaceBetween: '-20%',
+      },
+      100: {
+        initialSlide: 5,
+        slidesPerView: 4,
+        spaceBetween: '-16%',
+      },
+    },
   });
   $('.projects-main__card').each(function () {
     $(this).on('mouseover', function () {
