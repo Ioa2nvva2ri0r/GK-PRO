@@ -447,6 +447,8 @@ input[type='search']::-webkit-search-results-decoration {
 }
 
 .header {
+  position: relative;
+  z-index: 5;
   padding-top: 3.2rem;
 }
 .header__container {
@@ -1313,6 +1315,8 @@ input[type='search']::-webkit-search-results-decoration {
 }
 
 .header {
+  position: relative;
+  z-index: 5;
   padding-top: 3.2rem;
 }
 .header__container {
@@ -4714,21 +4718,38 @@ input[type='search']::-webkit-search-results-decoration {
 }
 
 .about-main {
-  overflow: hidden;
   position: relative;
-  margin-top: 8.9rem;
-  padding-bottom: 7rem;
+  margin-top: 7.5rem;
+}
+.about-main::before {
+  position: absolute;
+  content: '';
+  top: -16rem;
+  left: 0;
+  z-index: 3;
+  width: 67.4rem;
+  height: 107.8rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(35, 35, 37, 0)), color-stop(77.96%, #232325));
+  background: -o-linear-gradient(top, rgba(35, 35, 37, 0) 0%, #232325 77.96%);
+  background: linear-gradient(180deg, rgba(35, 35, 37, 0) 0%, #232325 77.96%);
 }
 .about-main svg {
   position: absolute;
-  right: -6.8rem;
+  right: -11.5rem;
   top: 2.1rem;
-  width: 168.3rem;
-  height: 40rem;
+  width: 117.3rem;
+  height: 52.5rem;
+}
+.about-main__container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  padding-bottom: 24.5rem;
 }
 .about-main__title {
-  margin-left: -0.5rem;
-  margin-bottom: 9.2rem;
+  margin-bottom: 5.8rem;
   font-size: 8.2rem;
   font-weight: 700;
   color: var(--red);
@@ -4738,25 +4759,63 @@ input[type='search']::-webkit-search-results-decoration {
   right: -7.8rem;
 }
 .about-main__img {
+  position: relative;
+  z-index: 5;
   -o-object-fit: cover;
   object-fit: cover;
   -o-object-position: center;
   object-position: center;
   vertical-align: bottom;
+  width: 78rem;
+  height: 49rem;
+}
+.about-main__img-box {
+  position: relative;
+}
+.about-main__img-box::before,
+.about-main__img-box::after {
+  position: absolute;
+  content: '';
+}
+.about-main__img-box::before {
+  top: 28rem;
+  left: -17.5rem;
   width: 53.5rem;
-  height: 35rem;
+  height: 20.4rem;
+  background: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 0.03)), to(rgba(255, 255, 255, 0)));
+  background: -o-linear-gradient(right, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+}
+.about-main__img-box::after {
+  top: 2rem;
+  right: -113.7rem;
+  width: 157.7rem;
+  height: 26rem;
+  background-image: url("data:image/svg+xml,%3Csvg width='1571' height='260' viewBox='0 0 1571 260' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0H1577V260H0V0Z' fill='url(%23paint0_linear_1204_18179)' fill-opacity='0.12'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_1204_18179' x1='186.707' y1='181.844' x2='1406.93' y2='637.387' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%239B322E'/%3E%3Cstop offset='1' stop-color='%23E5554F' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.about-main__img--shadow {
+  position: absolute;
+  top: 45rem;
+  left: 1.9rem;
+  z-index: 1;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  vertical-align: bottom;
+  width: 61.5rem;
+  height: 38.4rem;
 }
 .about-main__content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: 4rem;
+  position: relative;
+  z-index: 5;
+  left: -12.8rem;
+  padding-top: 4.8rem;
 }
 .about-main__desc {
-  margin-top: 0.2rem;
   font-family: 'GraphikLCG';
   font-weight: 300;
   font-size: 2.2rem;
@@ -4768,34 +4827,60 @@ input[type='search']::-webkit-search-results-decoration {
 }
 @media (max-width: 48em) {
   .about-main {
-    margin-top: 11.2rem;
-    padding-bottom: 6.6rem;
+    margin-top: 0;
+  }
+  .about-main::before {
+    top: 22rem;
+    left: 8.8rem;
+    width: 57.4rem;
+    height: 91.8rem;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(35, 35, 37, 0)), color-stop(77.96%, #232325));
+    background: -o-linear-gradient(top, rgba(35, 35, 37, 0) 0%, #232325 77.96%);
+    background: linear-gradient(180deg, rgba(35, 35, 37, 0) 0%, #232325 77.96%);
   }
   .about-main svg {
-    top: 1rem;
-    right: 1.6rem;
-    width: 41.8rem;
-    height: 29.8rem;
+    top: 26.8rem;
+    right: -50.4rem;
+    z-index: 4;
+    width: 169.8rem;
+    height: 42.2rem;
+  }
+  .about-main__container {
+    padding-top: 21.2rem;
+    padding-bottom: 6.5rem;
   }
   .about-main__title {
-    margin-left: 0;
-    margin-bottom: 5.2rem;
+    position: absolute;
+    top: -62rem;
     font-size: 5.8rem;
   }
   .about-main__img {
-    width: 100%;
-    height: 44.8rem;
-    border-radius: 2rem;
+    width: 79.5rem;
+    height: 52rem;
+    left: 2.4rem;
   }
-  .about-main__content {
+  .about-main__img-box::before {
+    top: 29.5rem;
+    left: -27.5rem;
+    width: 64.4rem;
+    height: 20.8rem;
+  }
+  .about-main__img-box::after {
+    top: 2.8rem;
+    right: -5rem;
+    width: 43.4rem;
+    height: 27rem;
+    background-image: url("data:image/svg+xml,%3Csvg width='187' height='135' viewBox='0 0 187 135' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath id='Rectangle 39907' d='M0 0H217V135H0V0Z' fill='url(%23paint0_linear_1204_18204)' fill-opacity='0.12'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_1204_18204' x1='25.6915' y1='94.4189' x2='160.903' y2='109.229' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0.146298' stop-color='%239B322E'/%3E%3Cstop offset='1' stop-color='%23E5554F' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
+  }
+  .about-main__container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    gap: 4.6rem;
   }
-  .about-main__slogan {
-    right: -10.8rem;
+  .about-main__content {
+    left: 0;
+    padding: 6.6rem 3.2rem 0;
   }
   .about-main__desc {
     font-size: 3.6rem;
@@ -4911,7 +4996,7 @@ input[type='search']::-webkit-search-results-decoration {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    gap: 4.6rem;
+    gap: 4.8rem;
   }
   .founder__img {
     top: 5.4rem;
@@ -6127,7 +6212,8 @@ input[type='search']::-webkit-search-results-decoration {
 }
 
 .worth {
-  padding-top: 12rem;
+  position: relative;
+  z-index: 5;
 }
 .worth__title {
   margin-bottom: 5.8rem;
@@ -6440,10 +6526,117 @@ input[type='search']::-webkit-search-results-decoration {
 }
 @media (max-width: 48em) {
   .smartmoney-investment__title {
+    margin-bottom: 5.6rem;
     font-size: 5rem;
   }
+  .smartmoney-investment__tab {
+    text-align: left;
+    min-height: 19.6rem;
+    font-size: 3.6rem;
+    padding: 3.5rem 3.2rem 4.2rem;
+  }
+  .smartmoney-investment__tab span {
+    max-width: initial;
+  }
   .smartmoney-investment__tabs {
-    grid-template-columns: initial;
+    grid-template-columns: 100%;
+    gap: 2.4rem;
+  }
+  .smartmoney-investment__tabs > li {
+    -webkit-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.4s;
+    -o-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    -webkit-transition-timing-function: ease-in-out;
+    -o-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+  }
+  .smartmoney-investment__tab-container {
+    grid-column: initial;
+    padding: 2rem 2rem 0.4rem;
+    border-radius: 2rem;
+  }
+  .smartmoney-investment__tab-box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .smartmoney-investment__dropdown {
+    padding: 3.8rem 3.6rem 3.7rem 10.6rem;
+  }
+  .smartmoney-investment__dropdown.active {
+    margin-bottom: 20rem;
+  }
+  .smartmoney-investment__dropdown > p {
+    max-width: initial;
+    font-size: 3.6rem;
+    line-height: 128%;
+  }
+  .smartmoney-investment__dropdown > p:not(:last-child) {
+    margin-bottom: 2.3rem;
+  }
+  .smartmoney-investment__dropdown > p > svg {
+    top: 1rem;
+    left: -7.4rem;
+    width: 3rem;
+    height: 3rem;
+  }
+  .smartmoney-investment__dropdown-box:last-child .smartmoney-investment__dropdown {
+    margin-bottom: 1.7rem;
+  }
+  .smartmoney-investment__dropdown-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    min-height: 18.6rem;
+    margin-bottom: 1.7rem;
+    padding: 3.8rem 3.6rem 4.4rem;
+  }
+  .smartmoney-investment__dropdown-btn strong {
+    text-align: left;
+    float: left;
+    max-width: 46rem;
+    font-size: 3.2rem;
+  }
+  .smartmoney-investment__dropdown-btn strong.more-three-lines {
+    padding-bottom: 4.4rem;
+  }
+  .smartmoney-investment__dropdown-btn i {
+    bottom: 4rem;
+    right: 3.4rem;
+    width: 10.6rem;
+    height: 10.6rem;
+  }
+  .smartmoney-investment__dropdown-btn i svg {
+    width: 3.1rem;
+    height: 3.1rem;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  .smartmoney-investment__dropdown--all {
+    position: static;
+    right: 0;
+    bottom: initial;
+    margin: 1rem 3.6rem 1.6rem auto;
+    width: 10.6rem;
+    height: 10.6rem;
+  }
+  .smartmoney-investment__dropdown--all svg {
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-top: 0.6rem;
+  }
+  .smartmoney-investment__dropdown--all.active {
+    position: absolute;
+    margin: 5.2rem 5.4rem 0 0;
   }
 }
 
@@ -6492,6 +6685,8 @@ input[type='search']::-webkit-search-results-decoration {
   padding-top: 5rem;
 }
 .private-equity__link {
+  position: relative;
+  z-index: 2;
   padding: 0.6rem 2.6rem;
   font-size: 1.4rem;
   color: var(--red);
@@ -6556,6 +6751,78 @@ input[type='search']::-webkit-search-results-decoration {
   font-weight: 400;
   line-height: 131%;
   letter-spacing: 0.02em;
+}
+@media (max-width: 48em) {
+  .private-equity {
+    padding-top: 23.2rem;
+  }
+  .private-equity__title {
+    margin-bottom: 5.2rem;
+    font-size: 5rem;
+    line-height: 111%;
+  }
+  .private-equity__content {
+    position: relative;
+    padding-bottom: 6.6rem;
+  }
+  .private-equity__content > svg {
+    position: absolute;
+    top: -20.2rem;
+    right: -1.4rem;
+    width: 62.2rem;
+    height: 34.8rem;
+  }
+  .private-equity__content--right {
+    padding-top: 6.2rem;
+    border-top: 0.2rem solid rgba(255, 255, 255, 0.3);
+  }
+  .private-equity__content--right .private-equity__link {
+    display: inline-block;
+    padding: 2.6rem 4.2rem 2.8rem;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 160%;
+  }
+  .private-equity__desc {
+    margin-bottom: 6.4rem;
+    font-size: 3.6rem;
+    line-height: 128%;
+    letter-spacing: 0.02em;
+  }
+  .private-equity__list {
+    grid-template-columns: 100%;
+    gap: 3.2rem;
+  }
+  .private-equity__card {
+    padding: 6.6rem 3.2rem 6rem 3.2rem;
+    min-height: 33rem;
+    border-radius: 2rem 2rem 0 0;
+  }
+  .private-equity__card > span {
+    top: 0;
+    bottom: initial;
+    left: initial;
+    background-size: contain;
+  }
+  .private-equity__card:first-child > span {
+    right: -49.2rem;
+  }
+  .private-equity__card:nth-child(2) > span {
+    right: -47rem;
+    bottom: initial;
+  }
+  .private-equity__card:nth-child(3) > span {
+    right: -52.8rem;
+  }
+  .private-equity__card-title {
+    margin-bottom: 4rem;
+    font-size: 2.8rem;
+  }
+  .private-equity__card-desc {
+    max-width: 56rem;
+    font-size: 3.6rem;
+    line-height: 129%;
+  }
 }
 
 .smartmoney {
@@ -6710,7 +6977,7 @@ input[type='search']::-webkit-search-results-decoration {
   }
   .smartmoney__desc {
     position: relative;
-    padding-top: 4rem;
+    padding-top: 4.6rem;
     z-index: 5;
     font-size: 4rem;
     padding-left: 0;
@@ -6727,7 +6994,7 @@ input[type='search']::-webkit-search-results-decoration {
     letter-spacing: 0.04em;
   }
   .smartmoney__desc span.mobile {
-    font-size: 7rem;
+    font-size: 5rem;
   }
 }
 
@@ -7517,9 +7784,10 @@ input[type='search']::-webkit-search-results-decoration {
     margin-bottom: 23.8rem;
   }
   .articles__title {
+    width: 100%;
+    max-width: 67.6rem;
     font-size: 5rem;
     line-height: 110%;
-    letter-spacing: -0.03em;
   }
   .articles__title-box {
     padding-bottom: 5.2rem;

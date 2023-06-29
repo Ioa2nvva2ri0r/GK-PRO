@@ -318,7 +318,9 @@ if ($('#additionally-btn').length !== 0) {
   $('#additionally-btn').on('click', function () {
     $(this).toggleClass('active');
     $('#additionally-box').toggleClass('active');
-    $('#industry').selectmenu();
+    $(function () {
+      $('#industry').selectmenu();
+    });
   });
 }
 ymaps.ready(init);
@@ -404,40 +406,89 @@ if (document.querySelector('.projects-main__tab')) {
     });
   });
 }
-if (document.querySelector('.smartmoney-investment')) {
+if ($('.smartmoney-investment').length !== 0) {
+  var dropdown = function dropdown() {
+    $(this).toggleClass('active').next().slideToggle();
+    if (dropdownBtn.not('.active').length === 0) dropdownAll.addClass('hidden');
+    else dropdownAll.removeClass('hidden');
+    if (window.screen.width < 768) {
+      var dropdownEl = $(this).next();
+      if (dropdownBtn.not('.active').length === 0) {
+        $('.smartmoney-investment__dropdown').each(function () {
+          $(this).removeClass('active');
+        });
+        dropdownAll.addClass('active');
+      } else {
+        if (!$(this).is(dropdownBtn.last()) && $(this).hasClass('active')) {
+          $('.smartmoney-investment__dropdown').each(function () {
+            $(this).removeClass('active');
+          });
+          dropdownAll.addClass('hidden');
+          dropdownEl.addClass('active');
+          setTimeout(function () {
+            dropdownAll
+              .css({
+                top: ''.concat(Math.round(dropdownEl.position().top + dropdownEl.outerHeight()), 'px'),
+              })
+              .removeClass('hidden')
+              .addClass('active');
+          }, 500);
+        } else if ($(this).not('.active')) {
+          $('.smartmoney-investment__dropdown').each(function () {
+            $(this).removeClass('active');
+          });
+          dropdownAll.removeClass('active').removeClass('hidden');
+        }
+      }
+    } else {
+      if (dropdownBtn.last().hasClass('active')) dropdownAll.addClass('hidden');
+      else dropdownAll.removeClass('hidden');
+    }
+  };
   var dropdownBtn = $('.smartmoney-investment__tab-box.active')
     .children('.smartmoney-investment__dropdown-box')
     .children('.smartmoney-investment__dropdown-btn');
   var dropdownAll = $('.smartmoney-investment__dropdown--all');
-  $('.smartmoney-investment__tab').each(function () {
+  if (window.screen.width < 768)
+    $('.smartmoney-investment__tab-container').css({
+      'grid-row': '2',
+    });
+  $('.smartmoney-investment__tab').each(function (index) {
     $(this).on('click', function () {
       $('.smartmoney-investment__tab, .smartmoney-investment__tab-box').each(function () {
         $(this).removeClass('active');
       });
       $(this).addClass('active');
       $("[data-tab-smartmoney='".concat($(this).attr('id'), "']")).addClass('active');
+      if (window.screen.width < 768)
+        $('.smartmoney-investment__tab-container').css({
+          'grid-row': ''.concat(index + 2),
+        });
       dropdownBtn = $('.smartmoney-investment__tab-box.active')
         .children('.smartmoney-investment__dropdown-box')
         .children('.smartmoney-investment__dropdown-btn');
       dropdownBtn.each(function () {
         $(this).removeClass('active').next().slideUp();
+        $(this).off('click', dropdown);
+        $(this).on('click', dropdown);
       });
-      dropdownAll.removeClass('hidden');
+      dropdownAll.removeClass('hidden').removeClass('active');
     });
   });
   dropdownBtn.each(function () {
-    $(this).on('click', function () {
-      $(this).toggleClass('active').next().slideToggle();
-      if (dropdownBtn.not('.active').length === 0) dropdownAll.addClass('hidden');
-      if (dropdownBtn.last().hasClass('active')) dropdownAll.addClass('hidden');
-      else dropdownAll.removeClass('hidden');
-    });
+    $(this).on('click', dropdown);
   });
   dropdownAll.on('click', function () {
     dropdownBtn.each(function () {
       $(this).addClass('active').next().slideDown();
     });
     $(this).addClass('hidden');
+    if (window.screen.width < 768) {
+      $(this).addClass('active');
+      $('.smartmoney-investment__dropdown').each(function () {
+        $(this).removeClass('active');
+      });
+    }
   });
 }
 
