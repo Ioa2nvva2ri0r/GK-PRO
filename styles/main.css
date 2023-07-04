@@ -448,7 +448,7 @@ input[type='search']::-webkit-search-results-decoration {
 
 .header {
   position: relative;
-  z-index: 5;
+  z-index: 30;
   padding-top: 3.2rem;
 }
 .header__container {
@@ -1316,7 +1316,7 @@ input[type='search']::-webkit-search-results-decoration {
 
 .header {
   position: relative;
-  z-index: 5;
+  z-index: 30;
   padding-top: 3.2rem;
 }
 .header__container {
@@ -4735,8 +4735,8 @@ input[type='search']::-webkit-search-results-decoration {
 }
 .about-main svg {
   position: absolute;
-  right: -11.5rem;
-  top: 2.1rem;
+  right: -13rem;
+  top: 5.5rem;
   width: 117.3rem;
   height: 52.5rem;
 }
@@ -4746,7 +4746,7 @@ input[type='search']::-webkit-search-results-decoration {
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
-  padding-bottom: 24.5rem;
+  padding-bottom: 18rem;
 }
 .about-main__title {
   margin-bottom: 5.8rem;
@@ -4761,13 +4761,15 @@ input[type='search']::-webkit-search-results-decoration {
 .about-main__img {
   position: relative;
   z-index: 5;
+  top: -2.5rem;
+  margin-left: 12rem;
   -o-object-fit: cover;
   object-fit: cover;
   -o-object-position: center;
   object-position: center;
   vertical-align: bottom;
-  width: 78rem;
-  height: 49rem;
+  width: 47.3rem;
+  height: 53rem;
 }
 .about-main__img-box {
   position: relative;
@@ -4780,6 +4782,7 @@ input[type='search']::-webkit-search-results-decoration {
 .about-main__img-box::before {
   top: 28rem;
   left: -17.5rem;
+  z-index: 4;
   width: 53.5rem;
   height: 20.4rem;
   background: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 0.03)), to(rgba(255, 255, 255, 0)));
@@ -4788,7 +4791,7 @@ input[type='search']::-webkit-search-results-decoration {
 }
 .about-main__img-box::after {
   top: 2rem;
-  right: -113.7rem;
+  right: -133.7rem;
   width: 157.7rem;
   height: 26rem;
   background-image: url("data:image/svg+xml,%3Csvg width='1571' height='260' viewBox='0 0 1571 260' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0H1577V260H0V0Z' fill='url(%23paint0_linear_1204_18179)' fill-opacity='0.12'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_1204_18179' x1='186.707' y1='181.844' x2='1406.93' y2='637.387' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%239B322E'/%3E%3Cstop offset='1' stop-color='%23E5554F' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
@@ -4798,29 +4801,30 @@ input[type='search']::-webkit-search-results-decoration {
 }
 .about-main__img--shadow {
   position: absolute;
-  top: 45rem;
-  left: 1.9rem;
+  top: 50rem;
+  left: 12.5rem;
   z-index: 1;
   -o-object-fit: cover;
   object-fit: cover;
   -o-object-position: center;
   object-position: center;
   vertical-align: bottom;
-  width: 61.5rem;
-  height: 38.4rem;
+  width: 43.3rem;
+  height: 48.5rem;
 }
 .about-main__content {
   position: relative;
   z-index: 5;
-  left: -12.8rem;
+  max-width: 1173px;
+  padding-left: 6rem;
   padding-top: 4.8rem;
 }
 .about-main__desc {
   font-family: 'GraphikLCG';
   font-weight: 300;
   font-size: 2.2rem;
-  line-height: 131%;
-  letter-spacing: 0.015em;
+  line-height: 122%;
+  letter-spacing: -0.029em;
 }
 .about-main__desc strong {
   font-weight: 600;
@@ -4839,34 +4843,34 @@ input[type='search']::-webkit-search-results-decoration {
     background: linear-gradient(180deg, rgba(35, 35, 37, 0) 0%, #232325 77.96%);
   }
   .about-main svg {
-    top: 26.8rem;
+    top: 28.3rem;
     right: -50.4rem;
     z-index: 4;
     width: 169.8rem;
     height: 42.2rem;
   }
   .about-main__container {
-    padding-top: 21.2rem;
+    padding-top: 19rem;
     padding-bottom: 6.5rem;
   }
   .about-main__title {
     position: absolute;
-    top: -62rem;
+    top: -68rem;
     font-size: 5.8rem;
   }
   .about-main__img {
-    width: 79.5rem;
-    height: 52rem;
-    left: 2.4rem;
+    width: 50.1rem;
+    height: 56.1rem;
+    top: 0;
   }
   .about-main__img-box::before {
-    top: 29.5rem;
+    top: 33rem;
     left: -27.5rem;
     width: 64.4rem;
     height: 20.8rem;
   }
   .about-main__img-box::after {
-    top: 2.8rem;
+    top: 6.5rem;
     right: -5rem;
     width: 43.4rem;
     height: 27rem;
@@ -4879,8 +4883,7 @@ input[type='search']::-webkit-search-results-decoration {
     flex-direction: column;
   }
   .about-main__content {
-    left: 0;
-    padding: 6.6rem 3.2rem 0;
+    padding: 7.4rem 3.2rem 0;
   }
   .about-main__desc {
     font-size: 3.6rem;
