@@ -242,21 +242,29 @@ if (document.querySelector('.hero__slider')) {
       $('[data-projecttabdesc="'.concat($(this).data('projecttab'), '"]')).addClass('active');
     });
   });
-  $('.investment__tab-btn').each(function () {
-    $(this).on('click', function () {
-      $('.investment__tab, .investment__tab-btn').each(function () {
-        $(this).removeClass('active');
-      });
-      $(this).addClass('active');
-      $('#'.concat($(this).data('tab'))).addClass('active');
-    });
-  });
   if (window.screen.width > 768) {
     var _Swiper;
-    var swiperProjectsMain = new Swiper(
+    var onWheel = function onWheel(e) {
+      e = e || window.event;
+      var delta = e.deltaY || e.detail || e.wheelDelta;
+      var scroll = Math.sign(delta);
+      var first = $('.investment__tab').first().hasClass('swiper-slide-active');
+      var last = $('.investment__tab').last().hasClass('swiper-slide-active');
+
+      // if (first) {
+      //   console.log(scroll === -1);
+      //   if (scroll === -1) swiperInvestment.mousewheel.disable();
+      //   else swiperInvestment.mousewheel.enable();
+      // }
+      // console.log(scroll);
+
+      if (scroll === -1 || scroll === 1) e.preventDefault ? e.preventDefault() : (e.returnValue = false);
+      else return;
+    };
+    var swiperInvestment = new Swiper(
       '.investment__slider',
       ((_Swiper = {
-        speed: 1000,
+        speed: 1500,
         slidesPerView: 'auto',
       }),
       _defineProperty(_Swiper, 'slidesPerView', 1),
@@ -265,7 +273,7 @@ if (document.querySelector('.hero__slider')) {
         sensitivity: 1.5,
       }),
       _defineProperty(_Swiper, 'on', {
-        scroll: function scroll(swiper) {
+        scroll: function scroll(swiper, e) {
           $('.investment__tab-btn').each(function () {
             $(this).removeClass('active left');
           });
@@ -280,6 +288,44 @@ if (document.querySelector('.hero__slider')) {
       }),
       _Swiper)
     );
+    var elemWheel = document.getElementById('investment');
+    if (elemWheel.addEventListener) {
+      if ('onwheel' in document) {
+        // IE9+, FF17+, Ch31+
+        elemWheel.addEventListener('wheel', onWheel);
+      } else if ('onmousewheel' in document) {
+        // устаревший вариант события
+        elemWheel.addEventListener('mousewheel', onWheel);
+      } else {
+        // Firefox < 17
+        elemWheel.addEventListener('MozMousePixelScroll', onWheel);
+      }
+    } else {
+      // IE8-
+      elemWheel.attachEvent('onmousewheel', onWheel);
+    }
+    $('.investment__tab-btn').each(function () {
+      $(this).on('click', function () {
+        $(this).removeClass('active');
+        swiperInvestment.slideTo($('#'.concat($(this).data('tab'))).index());
+        $('.investment__tab-btn')
+          .not($(this))
+          .each(function () {
+            $(this).removeClass('left');
+            $(this).addClass('active '.concat($('.investment__tab').last().hasClass('swiper-slide-active') ? 'left' : ''));
+          });
+      });
+    });
+  } else {
+    $('.investment__tab-btn').each(function () {
+      $(this).on('click', function () {
+        $('.investment__tab, .investment__tab-btn').each(function () {
+          $(this).removeClass('active');
+        });
+        $(this).addClass('active');
+        $('#'.concat($(this).data('tab'))).addClass('active');
+      });
+    });
   }
 }
 if ($('#additionally-btn').length !== 0) {
@@ -376,7 +422,7 @@ if (document.querySelector('.projects-main__tab')) {
         });
     });
   }
-  var _swiperProjectsMain = new Swiper('.projects-main__slider', {
+  var swiperProjectsMain = new Swiper('.projects-main__slider', {
     speed: 800,
     loop: true,
     observer: true,
@@ -396,9 +442,9 @@ if (document.querySelector('.projects-main__tab')) {
   $('.projects-main__card').each(function () {
     $(this).on('mouseover', function () {
       if ($(this).parent().next().children(this).hasClass('active')) {
-        _swiperProjectsMain.slidePrev();
+        swiperProjectsMain.slidePrev();
       } else if ($(this).parent().prev().children(this).hasClass('active')) {
-        _swiperProjectsMain.slideNext();
+        swiperProjectsMain.slideNext();
       }
       $('.projects-main__content-box, .projects-main__card').each(function () {
         $(this).removeClass('active');

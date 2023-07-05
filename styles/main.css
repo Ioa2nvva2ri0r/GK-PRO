@@ -3639,7 +3639,7 @@ input[type='search']::-webkit-search-results-decoration {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  visibility: visible;
+  visibility: hidden;
   opacity: 0;
   width: 100%;
   height: 100%;
@@ -3655,9 +3655,9 @@ input[type='search']::-webkit-search-results-decoration {
   -webkit-transition-timing-function: ease-in-out;
   -o-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-  -webkit-transition-duration: 1s;
-  -o-transition-duration: 1s;
-  transition-duration: 1s;
+  -webkit-transition-duration: 1.5s;
+  -o-transition-duration: 1.5s;
+  transition-duration: 1.5s;
 }
 .investment__tab-btn.active {
   visibility: visible;
@@ -3702,6 +3702,7 @@ input[type='search']::-webkit-search-results-decoration {
 }
 .investment__tab-btn[data-tab='smartmoney'] {
   background-color: var(--red);
+  right: calc(100% - 13.7rem);
 }
 .investment__tab-btn[data-tab='smartmoney'] span[class*='--desc'] {
   background: -o-linear-gradient(bottom, #ffffff, #ffffff), -o-linear-gradient(355deg, #dda95b -19.78%, #d62b2c 55.97%, #3b63df 110.96%);
@@ -4609,17 +4610,17 @@ input[type='search']::-webkit-search-results-decoration {
   -ms-flex-direction: column;
   flex-direction: column;
 }
-.projects__progress--count {
+.projects__progress--count-left,
+.projects__progress--count-right {
   background: -o-linear-gradient(bottom, #ffffff, #ffffff), -o-linear-gradient(355deg, #dda95b -19.78%, #d62b2c 55.97%, #3b63df 110.96%);
   background: linear-gradient(0deg, #ffffff, #ffffff), linear-gradient(95deg, #dda95b -19.78%, #d62b2c 55.97%, #3b63df 110.96%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-  font-size: 2.1rem;
   font-weight: 700;
 }
-.projects__progress--count span {
+.projects__progress--count-left {
   background: -o-linear-gradient(bottom, #ffffff, #ffffff), -o-linear-gradient(355deg, #dda95b -19.78%, #d62b2c 55.97%, #3b63df 110.96%);
   background: linear-gradient(0deg, #ffffff, #ffffff), linear-gradient(95deg, #dda95b -19.78%, #d62b2c 55.97%, #3b63df 110.96%);
   -webkit-background-clip: text;
@@ -4628,6 +4629,9 @@ input[type='search']::-webkit-search-results-decoration {
   text-fill-color: transparent;
   font-size: 3.5rem;
   line-height: 110%;
+}
+.projects__progress--count-right {
+  font-size: 2.1rem;
 }
 .projects__progress--desc {
   font-family: 'GraphikLCG', sans-serif;
@@ -4718,14 +4722,14 @@ input[type='search']::-webkit-search-results-decoration {
     gap: 2.8rem;
     margin-bottom: 3.6rem;
   }
-  .projects__progress--count {
-    font-size: 3.4rem;
-    line-height: 160%;
-  }
-  .projects__progress--count span {
+  .projects__progress--count-left {
     margin-right: -0.6rem;
     font-size: 4.4rem;
     line-height: 150%;
+  }
+  .projects__progress--count-right {
+    font-size: 3.4rem;
+    line-height: 160%;
   }
   .projects__progress--desc {
     padding-bottom: 0.8rem;
@@ -7394,17 +7398,17 @@ input[type='search']::-webkit-search-results-decoration {
   -ms-flex-direction: column;
   flex-direction: column;
 }
-.projects-main__content-progress--count {
+.projects-main__content-progress--count-left,
+.projects-main__content-progress--count-right {
   background: -o-linear-gradient(bottom, #ffffff, #ffffff), -o-linear-gradient(355deg, #dda95b -19.78%, #d62b2c 55.97%, #3b63df 110.96%);
   background: linear-gradient(0deg, #ffffff, #ffffff), linear-gradient(95deg, #dda95b -19.78%, #d62b2c 55.97%, #3b63df 110.96%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-  font-size: 2.1rem;
   font-weight: 700;
 }
-.projects-main__content-progress--count span {
+.projects-main__content-progress--count-left {
   background: -o-linear-gradient(bottom, #ffffff, #ffffff), -o-linear-gradient(355deg, #dda95b -19.78%, #d62b2c 55.97%, #3b63df 110.96%);
   background: linear-gradient(0deg, #ffffff, #ffffff), linear-gradient(95deg, #dda95b -19.78%, #d62b2c 55.97%, #3b63df 110.96%);
   -webkit-background-clip: text;
@@ -7413,6 +7417,9 @@ input[type='search']::-webkit-search-results-decoration {
   text-fill-color: transparent;
   font-size: 3.5rem;
   line-height: 110%;
+}
+.projects-main__content-progress--count-right {
+  font-size: 2.1rem;
 }
 .projects-main__content-progress--desc {
   font-family: 'GraphikLCG', sans-serif;
@@ -7708,13 +7715,13 @@ input[type='search']::-webkit-search-results-decoration {
     flex-direction: row;
     gap: 3.4rem;
   }
-  .projects-main__content-progress--count {
-    font-size: 3.4rem;
-    letter-spacing: -0.02em;
-  }
-  .projects-main__content-progress--count > span {
+  .projects-main__content-progress--count-left {
     font-size: 4.4rem;
     letter-spacing: -0.03em;
+  }
+  .projects-main__content-progress--count-right {
+    font-size: 3.4rem;
+    letter-spacing: -0.02em;
   }
   .projects-main__content-progress--desc {
     margin-bottom: -0.2rem;
