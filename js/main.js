@@ -1,55 +1,41 @@
 'use strict';
 
-function _slicedToArray(arr, i) {
-  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
-}
-function _nonIterableRest() {
-  throw new TypeError(
-    'Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.'
+function _typeof(obj) {
+  '@babel/helpers - typeof';
+  return (
+    (_typeof =
+      'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
+        ? function (obj) {
+            return typeof obj;
+          }
+        : function (obj) {
+            return obj && 'function' == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? 'symbol' : typeof obj;
+          }),
+    _typeof(obj)
   );
 }
-function _unsupportedIterableToArray(o, minLen) {
-  if (!o) return;
-  if (typeof o === 'string') return _arrayLikeToArray(o, minLen);
-  var n = Object.prototype.toString.call(o).slice(8, -1);
-  if (n === 'Object' && o.constructor) n = o.constructor.name;
-  if (n === 'Map' || n === 'Set') return Array.from(o);
-  if (n === 'Arguments' || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
-}
-function _arrayLikeToArray(arr, len) {
-  if (len == null || len > arr.length) len = arr.length;
-  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
-  return arr2;
-}
-function _iterableToArrayLimit(arr, i) {
-  var _i = null == arr ? null : ('undefined' != typeof Symbol && arr[Symbol.iterator]) || arr['@@iterator'];
-  if (null != _i) {
-    var _s,
-      _e,
-      _x,
-      _r,
-      _arr = [],
-      _n = !0,
-      _d = !1;
-    try {
-      if (((_x = (_i = _i.call(arr)).next), 0 === i)) {
-        if (Object(_i) !== _i) return;
-        _n = !1;
-      } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0);
-    } catch (err) {
-      (_d = !0), (_e = err);
-    } finally {
-      try {
-        if (!_n && null != _i['return'] && ((_r = _i['return']()), Object(_r) !== _r)) return;
-      } finally {
-        if (_d) throw _e;
-      }
-    }
-    return _arr;
+function _defineProperty(obj, key, value) {
+  key = _toPropertyKey(key);
+  if (key in obj) {
+    Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });
+  } else {
+    obj[key] = value;
   }
+  return obj;
 }
-function _arrayWithHoles(arr) {
-  if (Array.isArray(arr)) return arr;
+function _toPropertyKey(arg) {
+  var key = _toPrimitive(arg, 'string');
+  return _typeof(key) === 'symbol' ? key : String(key);
+}
+function _toPrimitive(input, hint) {
+  if (_typeof(input) !== 'object' || input === null) return input;
+  var prim = input[Symbol.toPrimitive];
+  if (prim !== undefined) {
+    var res = prim.call(input, hint || 'default');
+    if (_typeof(res) !== 'object') return res;
+    throw new TypeError('@@toPrimitive must return a primitive value.');
+  }
+  return (hint === 'string' ? String : Number)(input);
 }
 if (document.querySelector('.history__slider')) {
   var swiperMassHistory = new Swiper('.history__slider', {
@@ -247,15 +233,6 @@ if (document.querySelector('.hero__slider')) {
       nextSlideMessage: 'Вперёд',
     },
   });
-  $('.investment__tab-btn').each(function () {
-    $(this).on('click', function () {
-      $('.investment__tab, .investment__tab-btn').each(function () {
-        $(this).removeClass('active');
-      });
-      $(this).addClass('active');
-      $('#'.concat($(this).data('tab'))).addClass('active');
-    });
-  });
   $('.projects__slide').each(function () {
     $(this).on('click', function () {
       $('.projects__slide, .projects__content-box').each(function () {
@@ -265,53 +242,44 @@ if (document.querySelector('.hero__slider')) {
       $('[data-projecttabdesc="'.concat($(this).data('projecttab'), '"]')).addClass('active');
     });
   });
+  $('.investment__tab-btn').each(function () {
+    $(this).on('click', function () {
+      $('.investment__tab, .investment__tab-btn').each(function () {
+        $(this).removeClass('active');
+      });
+      $(this).addClass('active');
+      $('#'.concat($(this).data('tab'))).addClass('active');
+    });
+  });
   if (window.screen.width > 768) {
-    var onWheel = function onWheel(e) {
-      e = e || window.event;
-      var delta = e.deltaY || e.detail || e.wheelDelta;
-      var scroll = Math.sign(delta);
-      var activeEl = $('.investment__tab.active');
-      var prevEl = activeEl.prev();
-      var nextEl = activeEl.next();
-      if (scroll === -1 && prevEl.length !== 0) {
-        activeEl.removeClass('active');
-        prevEl.addClass('active');
-      } else if (scroll === 1 && nextEl.length !== 0) {
-        activeEl.removeClass('active');
-        nextEl.addClass('active');
-      }
-      if ((scroll === -1 && prevEl.length !== 0) || (scroll === 1 && nextEl.length !== 0))
-        e.preventDefault ? e.preventDefault() : (e.returnValue = false);
-      else return;
-    };
-    var elemWheelVisible = false;
-    var elemWheel = document.getElementById('investment');
-    var observerInvestment = new IntersectionObserver(
-      function (_ref) {
-        var _ref2 = _slicedToArray(_ref, 1),
-          entry = _ref2[0];
-        return (elemWheelVisible = entry.isIntersecting);
-      },
-      {
-        threshold: [1],
-      }
+    var _Swiper;
+    var swiperProjectsMain = new Swiper(
+      '.investment__slider',
+      ((_Swiper = {
+        speed: 1000,
+        slidesPerView: 'auto',
+      }),
+      _defineProperty(_Swiper, 'slidesPerView', 1),
+      _defineProperty(_Swiper, 'allowTouchMove', false),
+      _defineProperty(_Swiper, 'mousewheel', {
+        sensitivity: 1.5,
+      }),
+      _defineProperty(_Swiper, 'on', {
+        scroll: function scroll(swiper) {
+          $('.investment__tab-btn').each(function () {
+            $(this).removeClass('active left');
+          });
+          $('.investment__tab')
+            .not('.swiper-slide-active')
+            .each(function () {
+              var tabBtn = $("[data-tab='".concat($(this).attr('id'), "']"));
+              tabBtn.addClass('active');
+              if ($('.investment__tab').last().hasClass('swiper-slide-active')) tabBtn.addClass('left');
+            });
+        },
+      }),
+      _Swiper)
     );
-    observerInvestment.observe(document.getElementById('investment-box'));
-    if (elemWheel.addEventListener) {
-      if ('onwheel' in document) {
-        // IE9+, FF17+, Ch31+
-        elemWheel.addEventListener('wheel', onWheel);
-      } else if ('onmousewheel' in document) {
-        // устаревший вариант события
-        elemWheel.addEventListener('mousewheel', onWheel);
-      } else {
-        // Firefox < 17
-        elemWheel.addEventListener('MozMousePixelScroll', onWheel);
-      }
-    } else {
-      // IE8-
-      elemWheel.attachEvent('onmousewheel', onWheel);
-    }
   }
 }
 if ($('#additionally-btn').length !== 0) {
@@ -408,15 +376,15 @@ if (document.querySelector('.projects-main__tab')) {
         });
     });
   }
-  var swiperProjectsMain = new Swiper('.projects-main__slider', {
+  var _swiperProjectsMain = new Swiper('.projects-main__slider', {
     speed: 800,
     loop: true,
     observer: true,
-    slidesPerView: 9,
+    slidesPerView: 4,
     breakpoints: {
       769: {
-        slidesPerView: 9,
-        spaceBetween: '-20%',
+        slidesPerView: 4,
+        spaceBetween: '-50%',
       },
       100: {
         initialSlide: 5,
@@ -428,9 +396,9 @@ if (document.querySelector('.projects-main__tab')) {
   $('.projects-main__card').each(function () {
     $(this).on('mouseover', function () {
       if ($(this).parent().next().children(this).hasClass('active')) {
-        swiperProjectsMain.slidePrev();
+        _swiperProjectsMain.slidePrev();
       } else if ($(this).parent().prev().children(this).hasClass('active')) {
-        swiperProjectsMain.slideNext();
+        _swiperProjectsMain.slideNext();
       }
       $('.projects-main__content-box, .projects-main__card').each(function () {
         $(this).removeClass('active');
