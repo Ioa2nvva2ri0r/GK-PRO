@@ -312,7 +312,7 @@
               <span class="hero__slogan slogan desktop">pro</span>
             </div>
             <p class="hero__desc">инвестируем и помогаем в решении ключевых задач роста бизнеса</p>
-            <button class="hero__btn us-btn">оставить заявку</button>
+            <a class="hero__btn us-btn" href="#contact-form">оставить заявку</a>
           </div>
           <div class="hero__content--bottom">
             <div class="hero__slider swiper">
@@ -346,39 +346,240 @@
           </div>
         </div>
       </section>
-      <section class="priorities">
-        <div class="priorities__container container">
-          <div class="priorities__title-box">
-            <h2 class="priorities__title us-title">приоритеты <span class="underline">pro</span></h2>
-            <a class="priorities__link us-btn" href="#">подробнее о нас</a>
+      <section class="projects">
+        <div class="projects__container container">
+          <div class="projects__title-box">
+            <h2 class="projects__title us-title">Наши <span class="underline">проекты</span></h2>
+            <div class="projects__slider-btn-box">
+              <button class="projects__slider-btn projects__slider-btn--prev us-btn-slider">
+                <svg width="20" height="16">
+                  <use xlink:href="img/sprite.svg#arrow"></use>
+                </svg>
+              </button>
+              <button class="projects__slider-btn projects__slider-btn--next us-btn-slider">
+                <svg width="20" height="16">
+                  <use xlink:href="img/sprite.svg#arrow"></use>
+                </svg>
+              </button>
+            </div>
           </div>
-          <ul class="priorities__list">
-            <li class="priorities__item">
-              <span class="desktop" style="background-image: url('img/priorities/1.webp')"></span
-              ><span class="mobile" style="background-image: url('img/priorities/mobile/1.webp')"> </span
-              ><strong class="priorities__desc">стремление к росту</strong>
-            </li>
-            <li class="priorities__item">
-              <span class="desktop" style="background-image: url('img/priorities/2.webp')"></span
-              ><span class="mobile" style="background-image: url('img/priorities/mobile/2.webp')"> </span
-              ><strong class="priorities__desc">Прибыльность</strong>
-            </li>
-            <li class="priorities__item">
-              <span class="desktop" style="background-image: url('img/priorities/3.webp')"></span
-              ><span class="mobile" style="background-image: url('img/priorities/mobile/3.webp')"> </span
-              ><strong class="priorities__desc">Инновационность</strong>
-            </li>
-            <li class="priorities__item">
-              <span class="desktop" style="background-image: url('img/priorities/4.webp')"></span
-              ><span class="mobile" style="background-image: url('img/priorities/mobile/4.webp')"> </span
-              ><strong class="priorities__desc">Долгосрочный подход</strong>
-            </li>
-            <li class="priorities__item">
-              <span class="desktop" style="background-image: url('img/priorities/5.webp')"></span
-              ><span class="mobile" style="background-image: url('img/priorities/mobile/5.webp')"> </span
-              ><strong class="priorities__desc">Ответственность</strong>
-            </li>
-          </ul>
+          <div class="projects__slider swiper">
+            <div class="projects__slider-wrapper swiper-wrapper">
+              <div class="projects__slide swiper-slide" data-projectTab="project-1">
+                <span class="frame frame-1"></span><span class="frame frame-2"></span><span class="frame frame-3"></span
+                ><span class="frame frame-4"></span
+                ><img class="projects__logo" src="img/projects/1.svg" alt="ЕвразияСПГ" />
+              </div>
+              <div class="projects__slide swiper-slide" data-projectTab="project-2">
+                <span class="frame frame-1"></span><span class="frame frame-2"></span><span class="frame frame-3"></span
+                ><span class="frame frame-4"></span
+                ><img class="projects__logo" src="img/projects/2.svg" alt="Кейтеринбург" />
+              </div>
+              <div class="projects__slide swiper-slide active" data-projectTab="project-3">
+                <span class="frame frame-1"></span><span class="frame frame-2"></span><span class="frame frame-3"></span
+                ><span class="frame frame-4"></span
+                ><img class="projects__logo" src="img/projects/3.svg" alt="Агроном Грядкин" />
+              </div>
+              <div class="projects__slide swiper-slide" data-projectTab="project-4">
+                <span class="frame frame-1"></span><span class="frame frame-2"></span><span class="frame frame-3"></span
+                ><span class="frame frame-4"></span><img class="projects__logo" src="img/projects/4.svg" alt="Probus" />
+              </div>
+              <div class="projects__slide swiper-slide" data-projectTab="project-5">
+                <span class="frame frame-1"></span><span class="frame frame-2"></span><span class="frame frame-3"></span
+                ><span class="frame frame-4"></span><img class="projects__logo" src="img/projects/5.svg" alt="Probus" />
+              </div>
+              <div class="projects__slide swiper-slide" data-projectTab="project-6">
+                <span class="frame frame-1"></span><span class="frame frame-2"></span><span class="frame frame-3"></span
+                ><span class="frame frame-4"></span><img class="projects__logo" src="img/projects/6.svg" alt="Probus" />
+              </div>
+              <div class="projects__slide swiper-slide" data-projectTab="project-7">
+                <span class="frame frame-1"></span><span class="frame frame-2"></span><span class="frame frame-3"></span
+                ><span class="frame frame-4"></span><img class="projects__logo" src="img/projects/7.svg" alt="Probus" />
+              </div>
+              <div class="projects__slide swiper-slide" data-projectTab="project-8">
+                <span class="frame frame-1"></span><span class="frame frame-2"></span><span class="frame frame-3"></span
+                ><span class="frame frame-4"></span><img class="projects__logo" src="img/projects/8.svg" alt="Probus" />
+              </div>
+            </div>
+          </div>
+          <div class="projects__content">
+            <div class="projects__content-box" data-projectTabDesc="project-1">
+              <h3 class="projects__name">ЕвразияСПГ</h3>
+              <p class="projects__desc">
+                <span>Современная автобусная компания</span><span class="underline">реализованный</span>
+              </p>
+              <strong class="projects__progress"
+                ><span class="projects__progress--count"
+                  ><span class="projects__progress--count-left">2017 </span
+                  ><span class="projects__progress--count-right">год</span></span
+                ><span class="projects__progress--desc">год основания</span></strong
+              ><strong class="projects__progress"
+                ><span class="projects__progress--count"
+                  ><span class="projects__progress--count-left">500 </span
+                  ><span class="projects__progress--count-right">млн. руб.</span></span
+                ><span class="projects__progress--desc">товарооборот</span></strong
+              ><strong class="projects__progress"
+                ><span class="projects__progress--count"
+                  ><span class="projects__progress--count-left">500 </span
+                  ><span class="projects__progress--count-right">млн. руб.</span></span
+                ><span class="projects__progress--desc">товарооборот</span></strong
+              >
+            </div>
+            <div class="projects__content-box" data-projectTabDesc="project-2">
+              <h3 class="projects__name">Кейтеринбург</h3>
+              <p class="projects__desc">
+                <span>Современная автобусная компания</span><span class="underline">реализованный</span>
+              </p>
+              <strong class="projects__progress"
+                ><span class="projects__progress--count"
+                  ><span class="projects__progress--count-left">2017 </span
+                  ><span class="projects__progress--count-right">год</span></span
+                ><span class="projects__progress--desc">год основания</span></strong
+              ><strong class="projects__progress"
+                ><span class="projects__progress--count"
+                  ><span class="projects__progress--count-left">500 </span
+                  ><span class="projects__progress--count-right">млн. руб.</span></span
+                ><span class="projects__progress--desc">товарооборот</span></strong
+              ><strong class="projects__progress"
+                ><span class="projects__progress--count"
+                  ><span class="projects__progress--count-left">500 </span
+                  ><span class="projects__progress--count-right">млн. руб.</span></span
+                ><span class="projects__progress--desc">товарооборот</span></strong
+              >
+            </div>
+            <div class="projects__content-box active" data-projectTabDesc="project-3">
+              <h3 class="projects__name">Агроном Грядкин</h3>
+              <p class="projects__desc">
+                <span>Современная автобусная компания</span><span class="underline">реализованный</span>
+              </p>
+              <strong class="projects__progress"
+                ><span class="projects__progress--count"
+                  ><span class="projects__progress--count-left">2017 </span
+                  ><span class="projects__progress--count-right">год</span></span
+                ><span class="projects__progress--desc">год основания</span></strong
+              ><strong class="projects__progress"
+                ><span class="projects__progress--count"
+                  ><span class="projects__progress--count-left">500 </span
+                  ><span class="projects__progress--count-right">млн. руб.</span></span
+                ><span class="projects__progress--desc">товарооборот</span></strong
+              ><strong class="projects__progress"
+                ><span class="projects__progress--count"
+                  ><span class="projects__progress--count-left">500 </span
+                  ><span class="projects__progress--count-right">млн. руб.</span></span
+                ><span class="projects__progress--desc">товарооборот</span></strong
+              >
+            </div>
+            <div class="projects__content-box" data-projectTabDesc="project-4">
+              <h3 class="projects__name">Probus</h3>
+              <p class="projects__desc">
+                <span>Современная автобусная компания</span><span class="underline">реализованный</span>
+              </p>
+              <strong class="projects__progress"
+                ><span class="projects__progress--count"
+                  ><span class="projects__progress--count-left">2017 </span
+                  ><span class="projects__progress--count-right">год</span></span
+                ><span class="projects__progress--desc">год основания</span></strong
+              ><strong class="projects__progress"
+                ><span class="projects__progress--count"
+                  ><span class="projects__progress--count-left">500 </span
+                  ><span class="projects__progress--count-right">млн. руб.</span></span
+                ><span class="projects__progress--desc">товарооборот</span></strong
+              ><strong class="projects__progress"
+                ><span class="projects__progress--count"
+                  ><span class="projects__progress--count-left">500 </span
+                  ><span class="projects__progress--count-right">млн. руб.</span></span
+                ><span class="projects__progress--desc">товарооборот</span></strong
+              >
+            </div>
+            <div class="projects__content-box" data-projectTabDesc="project-5">
+              <h3 class="projects__name">Probus</h3>
+              <p class="projects__desc">
+                <span>Современная автобусная компания</span><span class="underline">реализованный</span>
+              </p>
+              <strong class="projects__progress"
+                ><span class="projects__progress--count"
+                  ><span class="projects__progress--count-left">2017 </span
+                  ><span class="projects__progress--count-right">год</span></span
+                ><span class="projects__progress--desc">год основания</span></strong
+              ><strong class="projects__progress"
+                ><span class="projects__progress--count"
+                  ><span class="projects__progress--count-left">500 </span
+                  ><span class="projects__progress--count-right">млн. руб.</span></span
+                ><span class="projects__progress--desc">товарооборот</span></strong
+              ><strong class="projects__progress"
+                ><span class="projects__progress--count"
+                  ><span class="projects__progress--count-left">500 </span
+                  ><span class="projects__progress--count-right">млн. руб.</span></span
+                ><span class="projects__progress--desc">товарооборот</span></strong
+              >
+            </div>
+            <div class="projects__content-box" data-projectTabDesc="project-6">
+              <h3 class="projects__name">Probus</h3>
+              <p class="projects__desc">
+                <span>Современная автобусная компания</span><span class="underline">реализованный</span>
+              </p>
+              <strong class="projects__progress"
+                ><span class="projects__progress--count"
+                  ><span class="projects__progress--count-left">2017 </span
+                  ><span class="projects__progress--count-right">год</span></span
+                ><span class="projects__progress--desc">год основания</span></strong
+              ><strong class="projects__progress"
+                ><span class="projects__progress--count"
+                  ><span class="projects__progress--count-left">500 </span
+                  ><span class="projects__progress--count-right">млн. руб.</span></span
+                ><span class="projects__progress--desc">товарооборот</span></strong
+              ><strong class="projects__progress"
+                ><span class="projects__progress--count"
+                  ><span class="projects__progress--count-left">500 </span
+                  ><span class="projects__progress--count-right">млн. руб.</span></span
+                ><span class="projects__progress--desc">товарооборот</span></strong
+              >
+            </div>
+            <div class="projects__content-box" data-projectTabDesc="project-7">
+              <h3 class="projects__name">Probus</h3>
+              <p class="projects__desc">
+                <span>Современная автобусная компания</span><span class="underline">реализованный</span>
+              </p>
+              <strong class="projects__progress"
+                ><span class="projects__progress--count"
+                  ><span class="projects__progress--count-left">2017 </span
+                  ><span class="projects__progress--count-right">год</span></span
+                ><span class="projects__progress--desc">год основания</span></strong
+              ><strong class="projects__progress"
+                ><span class="projects__progress--count"
+                  ><span class="projects__progress--count-left">500 </span
+                  ><span class="projects__progress--count-right">млн. руб.</span></span
+                ><span class="projects__progress--desc">товарооборот</span></strong
+              ><strong class="projects__progress"
+                ><span class="projects__progress--count"
+                  ><span class="projects__progress--count-left">500 </span
+                  ><span class="projects__progress--count-right">млн. руб.</span></span
+                ><span class="projects__progress--desc">товарооборот</span></strong
+              >
+            </div>
+            <div class="projects__content-box" data-projectTabDesc="project-8">
+              <h3 class="projects__name">Probus</h3>
+              <p class="projects__desc">
+                <span>Современная автобусная компания</span><span class="underline">реализованный</span>
+              </p>
+              <strong class="projects__progress"
+                ><span class="projects__progress--count"
+                  ><span class="projects__progress--count-left">2017 </span
+                  ><span class="projects__progress--count-right">год</span></span
+                ><span class="projects__progress--desc">год основания</span></strong
+              ><strong class="projects__progress"
+                ><span class="projects__progress--count"
+                  ><span class="projects__progress--count-left">500 </span
+                  ><span class="projects__progress--count-right">млн. руб.</span></span
+                ><span class="projects__progress--desc">товарооборот</span></strong
+              ><strong class="projects__progress"
+                ><span class="projects__progress--count"
+                  ><span class="projects__progress--count-left">500 </span
+                  ><span class="projects__progress--count-right">млн. руб.</span></span
+                ><span class="projects__progress--desc">товарооборот</span></strong
+              >
+            </div>
+          </div>
         </div>
       </section>
       <section class="investment" id="investment">
@@ -2080,240 +2281,39 @@
           </div>
         </div>
       </section>
-      <section class="projects">
-        <div class="projects__container container">
-          <div class="projects__title-box">
-            <h2 class="projects__title us-title">Наши <span class="underline">проекты</span></h2>
-            <div class="projects__slider-btn-box">
-              <button class="projects__slider-btn projects__slider-btn--prev us-btn-slider">
-                <svg width="20" height="16">
-                  <use xlink:href="img/sprite.svg#arrow"></use>
-                </svg>
-              </button>
-              <button class="projects__slider-btn projects__slider-btn--next us-btn-slider">
-                <svg width="20" height="16">
-                  <use xlink:href="img/sprite.svg#arrow"></use>
-                </svg>
-              </button>
-            </div>
+      <section class="priorities">
+        <div class="priorities__container container">
+          <div class="priorities__title-box">
+            <h2 class="priorities__title us-title">приоритеты <span class="underline">pro</span></h2>
+            <a class="priorities__link us-btn" href="#">подробнее о нас</a>
           </div>
-          <div class="projects__slider swiper">
-            <div class="projects__slider-wrapper swiper-wrapper">
-              <div class="projects__slide swiper-slide" data-projectTab="project-1">
-                <span class="frame frame-1"></span><span class="frame frame-2"></span><span class="frame frame-3"></span
-                ><span class="frame frame-4"></span
-                ><img class="projects__logo" src="img/projects/1.svg" alt="ЕвразияСПГ" />
-              </div>
-              <div class="projects__slide swiper-slide" data-projectTab="project-2">
-                <span class="frame frame-1"></span><span class="frame frame-2"></span><span class="frame frame-3"></span
-                ><span class="frame frame-4"></span
-                ><img class="projects__logo" src="img/projects/2.svg" alt="Кейтеринбург" />
-              </div>
-              <div class="projects__slide swiper-slide active" data-projectTab="project-3">
-                <span class="frame frame-1"></span><span class="frame frame-2"></span><span class="frame frame-3"></span
-                ><span class="frame frame-4"></span
-                ><img class="projects__logo" src="img/projects/3.svg" alt="Агроном Грядкин" />
-              </div>
-              <div class="projects__slide swiper-slide" data-projectTab="project-4">
-                <span class="frame frame-1"></span><span class="frame frame-2"></span><span class="frame frame-3"></span
-                ><span class="frame frame-4"></span><img class="projects__logo" src="img/projects/4.svg" alt="Probus" />
-              </div>
-              <div class="projects__slide swiper-slide" data-projectTab="project-5">
-                <span class="frame frame-1"></span><span class="frame frame-2"></span><span class="frame frame-3"></span
-                ><span class="frame frame-4"></span><img class="projects__logo" src="img/projects/5.svg" alt="Probus" />
-              </div>
-              <div class="projects__slide swiper-slide" data-projectTab="project-6">
-                <span class="frame frame-1"></span><span class="frame frame-2"></span><span class="frame frame-3"></span
-                ><span class="frame frame-4"></span><img class="projects__logo" src="img/projects/6.svg" alt="Probus" />
-              </div>
-              <div class="projects__slide swiper-slide" data-projectTab="project-7">
-                <span class="frame frame-1"></span><span class="frame frame-2"></span><span class="frame frame-3"></span
-                ><span class="frame frame-4"></span><img class="projects__logo" src="img/projects/7.svg" alt="Probus" />
-              </div>
-              <div class="projects__slide swiper-slide" data-projectTab="project-8">
-                <span class="frame frame-1"></span><span class="frame frame-2"></span><span class="frame frame-3"></span
-                ><span class="frame frame-4"></span><img class="projects__logo" src="img/projects/8.svg" alt="Probus" />
-              </div>
-            </div>
-          </div>
-          <div class="projects__content">
-            <div class="projects__content-box" data-projectTabDesc="project-1">
-              <h3 class="projects__name">ЕвразияСПГ</h3>
-              <p class="projects__desc">
-                <span>Современная автобусная компания</span><span class="underline">реализованный</span>
-              </p>
-              <strong class="projects__progress"
-                ><span class="projects__progress--count"
-                  ><span class="projects__progress--count-left">2017 </span
-                  ><span class="projects__progress--count-right">год</span></span
-                ><span class="projects__progress--desc">год основания</span></strong
-              ><strong class="projects__progress"
-                ><span class="projects__progress--count"
-                  ><span class="projects__progress--count-left">500 </span
-                  ><span class="projects__progress--count-right">млн. руб.</span></span
-                ><span class="projects__progress--desc">товарооборот</span></strong
-              ><strong class="projects__progress"
-                ><span class="projects__progress--count"
-                  ><span class="projects__progress--count-left">500 </span
-                  ><span class="projects__progress--count-right">млн. руб.</span></span
-                ><span class="projects__progress--desc">товарооборот</span></strong
-              >
-            </div>
-            <div class="projects__content-box" data-projectTabDesc="project-2">
-              <h3 class="projects__name">Кейтеринбург</h3>
-              <p class="projects__desc">
-                <span>Современная автобусная компания</span><span class="underline">реализованный</span>
-              </p>
-              <strong class="projects__progress"
-                ><span class="projects__progress--count"
-                  ><span class="projects__progress--count-left">2017 </span
-                  ><span class="projects__progress--count-right">год</span></span
-                ><span class="projects__progress--desc">год основания</span></strong
-              ><strong class="projects__progress"
-                ><span class="projects__progress--count"
-                  ><span class="projects__progress--count-left">500 </span
-                  ><span class="projects__progress--count-right">млн. руб.</span></span
-                ><span class="projects__progress--desc">товарооборот</span></strong
-              ><strong class="projects__progress"
-                ><span class="projects__progress--count"
-                  ><span class="projects__progress--count-left">500 </span
-                  ><span class="projects__progress--count-right">млн. руб.</span></span
-                ><span class="projects__progress--desc">товарооборот</span></strong
-              >
-            </div>
-            <div class="projects__content-box active" data-projectTabDesc="project-3">
-              <h3 class="projects__name">Агроном Грядкин</h3>
-              <p class="projects__desc">
-                <span>Современная автобусная компания</span><span class="underline">реализованный</span>
-              </p>
-              <strong class="projects__progress"
-                ><span class="projects__progress--count"
-                  ><span class="projects__progress--count-left">2017 </span
-                  ><span class="projects__progress--count-right">год</span></span
-                ><span class="projects__progress--desc">год основания</span></strong
-              ><strong class="projects__progress"
-                ><span class="projects__progress--count"
-                  ><span class="projects__progress--count-left">500 </span
-                  ><span class="projects__progress--count-right">млн. руб.</span></span
-                ><span class="projects__progress--desc">товарооборот</span></strong
-              ><strong class="projects__progress"
-                ><span class="projects__progress--count"
-                  ><span class="projects__progress--count-left">500 </span
-                  ><span class="projects__progress--count-right">млн. руб.</span></span
-                ><span class="projects__progress--desc">товарооборот</span></strong
-              >
-            </div>
-            <div class="projects__content-box" data-projectTabDesc="project-4">
-              <h3 class="projects__name">Probus</h3>
-              <p class="projects__desc">
-                <span>Современная автобусная компания</span><span class="underline">реализованный</span>
-              </p>
-              <strong class="projects__progress"
-                ><span class="projects__progress--count"
-                  ><span class="projects__progress--count-left">2017 </span
-                  ><span class="projects__progress--count-right">год</span></span
-                ><span class="projects__progress--desc">год основания</span></strong
-              ><strong class="projects__progress"
-                ><span class="projects__progress--count"
-                  ><span class="projects__progress--count-left">500 </span
-                  ><span class="projects__progress--count-right">млн. руб.</span></span
-                ><span class="projects__progress--desc">товарооборот</span></strong
-              ><strong class="projects__progress"
-                ><span class="projects__progress--count"
-                  ><span class="projects__progress--count-left">500 </span
-                  ><span class="projects__progress--count-right">млн. руб.</span></span
-                ><span class="projects__progress--desc">товарооборот</span></strong
-              >
-            </div>
-            <div class="projects__content-box" data-projectTabDesc="project-5">
-              <h3 class="projects__name">Probus</h3>
-              <p class="projects__desc">
-                <span>Современная автобусная компания</span><span class="underline">реализованный</span>
-              </p>
-              <strong class="projects__progress"
-                ><span class="projects__progress--count"
-                  ><span class="projects__progress--count-left">2017 </span
-                  ><span class="projects__progress--count-right">год</span></span
-                ><span class="projects__progress--desc">год основания</span></strong
-              ><strong class="projects__progress"
-                ><span class="projects__progress--count"
-                  ><span class="projects__progress--count-left">500 </span
-                  ><span class="projects__progress--count-right">млн. руб.</span></span
-                ><span class="projects__progress--desc">товарооборот</span></strong
-              ><strong class="projects__progress"
-                ><span class="projects__progress--count"
-                  ><span class="projects__progress--count-left">500 </span
-                  ><span class="projects__progress--count-right">млн. руб.</span></span
-                ><span class="projects__progress--desc">товарооборот</span></strong
-              >
-            </div>
-            <div class="projects__content-box" data-projectTabDesc="project-6">
-              <h3 class="projects__name">Probus</h3>
-              <p class="projects__desc">
-                <span>Современная автобусная компания</span><span class="underline">реализованный</span>
-              </p>
-              <strong class="projects__progress"
-                ><span class="projects__progress--count"
-                  ><span class="projects__progress--count-left">2017 </span
-                  ><span class="projects__progress--count-right">год</span></span
-                ><span class="projects__progress--desc">год основания</span></strong
-              ><strong class="projects__progress"
-                ><span class="projects__progress--count"
-                  ><span class="projects__progress--count-left">500 </span
-                  ><span class="projects__progress--count-right">млн. руб.</span></span
-                ><span class="projects__progress--desc">товарооборот</span></strong
-              ><strong class="projects__progress"
-                ><span class="projects__progress--count"
-                  ><span class="projects__progress--count-left">500 </span
-                  ><span class="projects__progress--count-right">млн. руб.</span></span
-                ><span class="projects__progress--desc">товарооборот</span></strong
-              >
-            </div>
-            <div class="projects__content-box" data-projectTabDesc="project-7">
-              <h3 class="projects__name">Probus</h3>
-              <p class="projects__desc">
-                <span>Современная автобусная компания</span><span class="underline">реализованный</span>
-              </p>
-              <strong class="projects__progress"
-                ><span class="projects__progress--count"
-                  ><span class="projects__progress--count-left">2017 </span
-                  ><span class="projects__progress--count-right">год</span></span
-                ><span class="projects__progress--desc">год основания</span></strong
-              ><strong class="projects__progress"
-                ><span class="projects__progress--count"
-                  ><span class="projects__progress--count-left">500 </span
-                  ><span class="projects__progress--count-right">млн. руб.</span></span
-                ><span class="projects__progress--desc">товарооборот</span></strong
-              ><strong class="projects__progress"
-                ><span class="projects__progress--count"
-                  ><span class="projects__progress--count-left">500 </span
-                  ><span class="projects__progress--count-right">млн. руб.</span></span
-                ><span class="projects__progress--desc">товарооборот</span></strong
-              >
-            </div>
-            <div class="projects__content-box" data-projectTabDesc="project-8">
-              <h3 class="projects__name">Probus</h3>
-              <p class="projects__desc">
-                <span>Современная автобусная компания</span><span class="underline">реализованный</span>
-              </p>
-              <strong class="projects__progress"
-                ><span class="projects__progress--count"
-                  ><span class="projects__progress--count-left">2017 </span
-                  ><span class="projects__progress--count-right">год</span></span
-                ><span class="projects__progress--desc">год основания</span></strong
-              ><strong class="projects__progress"
-                ><span class="projects__progress--count"
-                  ><span class="projects__progress--count-left">500 </span
-                  ><span class="projects__progress--count-right">млн. руб.</span></span
-                ><span class="projects__progress--desc">товарооборот</span></strong
-              ><strong class="projects__progress"
-                ><span class="projects__progress--count"
-                  ><span class="projects__progress--count-left">500 </span
-                  ><span class="projects__progress--count-right">млн. руб.</span></span
-                ><span class="projects__progress--desc">товарооборот</span></strong
-              >
-            </div>
-          </div>
+          <ul class="priorities__list">
+            <li class="priorities__item">
+              <span class="desktop" style="background-image: url('img/priorities/1.webp')"></span
+              ><span class="mobile" style="background-image: url('img/priorities/mobile/1.webp')"> </span
+              ><strong class="priorities__desc">стремление к росту</strong>
+            </li>
+            <li class="priorities__item">
+              <span class="desktop" style="background-image: url('img/priorities/2.webp')"></span
+              ><span class="mobile" style="background-image: url('img/priorities/mobile/2.webp')"> </span
+              ><strong class="priorities__desc">Прибыльность</strong>
+            </li>
+            <li class="priorities__item">
+              <span class="desktop" style="background-image: url('img/priorities/3.webp')"></span
+              ><span class="mobile" style="background-image: url('img/priorities/mobile/3.webp')"> </span
+              ><strong class="priorities__desc">Инновационность</strong>
+            </li>
+            <li class="priorities__item">
+              <span class="desktop" style="background-image: url('img/priorities/4.webp')"></span
+              ><span class="mobile" style="background-image: url('img/priorities/mobile/4.webp')"> </span
+              ><strong class="priorities__desc">Долгосрочный подход</strong>
+            </li>
+            <li class="priorities__item">
+              <span class="desktop" style="background-image: url('img/priorities/5.webp')"></span
+              ><span class="mobile" style="background-image: url('img/priorities/mobile/5.webp')"> </span
+              ><strong class="priorities__desc">Ответственность</strong>
+            </li>
+          </ul>
         </div>
       </section>
       <section class="about">
@@ -2349,7 +2349,7 @@
           </div>
         </div>
       </section>
-      <section class="contact container">
+      <section class="contact container" id="contact-form">
         <div class="contact__container">
           <div class="contact__box--left">
             <h2 class="contact__title us-title">связаться</h2>
