@@ -59,6 +59,9 @@
             <li class="nav__item"><a class="nav__link us-link" href="contacts.html">Контакты</a></li>
           </ul>
           <a class="nav__tel us-link mobile" href="tel:+83433430661">8 (343) 343-06-61</a>
+          <div class="header__lang-box mobile">
+            <a class="header__lang active" href="#">ru</a><a class="header__lang" href="#">en</a>
+          </div>
           <div class="nav__img-box mobile">
             <svg width="375" height="250" viewbox="0 0 375 250" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g opacity="0.6">
@@ -124,6 +127,9 @@
           </div>
         </nav>
         <a class="header__tel us-link desktop" href="tel:+83433430661">8 (343) 343-06-61</a>
+        <div class="header__lang-box desktop">
+          <a class="header__lang active" href="#">ru</a><a class="header__lang" href="#">en</a>
+        </div>
         <button class="header__burger mobile" id="menu-open">
           <svg width="25" height="19">
             <use xlink:href="img/sprite.svg#burger"></use>
@@ -269,8 +275,8 @@
             <h1 class="smartmoney__title">smart money</h1>
             <p class="smartmoney__desc">
               <strong>SMART MONEY </strong> <span class="desktop">— </span><span class="mobile">- </span>финансирование
-              с&nbsp;дополнительной&nbsp;интеллектуальной помощью от инвестора, благодаря которой компания сможет
-              закрыть ключевые компетенции, которых у нее не хватает
+              с&nbsp;дополнительной интеллектуальной помощью от инвестора, благодаря которой компания сможет закрыть
+              ключевые компетенции, которых у нее не хватает
             </p>
           </div>
         </div>
@@ -282,9 +288,7 @@
           </h2>
           <ul class="smartmoney-investment__tabs">
             <li class="smartmoney-investment__tab-item">
-              <button class="smartmoney-investment__tab active" id="financing">
-                <span>Привлечение финансирования</span>
-              </button>
+              <button class="smartmoney-investment__tab" id="financing"><span>Привлечение финансирования</span></button>
             </li>
             <li class="smartmoney-investment__tab-item">
               <button class="smartmoney-investment__tab" id="hr-support"><span>hr поддержка</span></button>
@@ -302,8 +306,9 @@
                 <span>Маркетинг и бизнес девелопмент</span>
               </button>
             </li>
-            <li class="smartmoney-investment__tab-container">
-              <div class="smartmoney-investment__tab-box active" data-tab-smartmoney="financing">
+            <li class="smartmoney-investment__tab-container hidden">
+              <img src="img/texture-smartmoney.svg" alt="Штриховка" />
+              <div class="smartmoney-investment__tab-box" data-tab-smartmoney="financing">
                 <div class="smartmoney-investment__dropdown-box">
                   <button class="smartmoney-investment__dropdown-btn" data-dropdown-btn="dropdown-1">
                     <span class="frame frame-1"></span><span class="frame frame-2"></span
@@ -1108,7 +1113,7 @@
                     <stop offset="1" stop-color="#E5554F"></stop>
                   </lineargradient>
                 </defs></svg
-              ><a class="private-equity__link us-btn desktop" href="#">преимущества </a>
+              ><strong class="private-equity__link desktop">преимущества </strong>
             </div>
             <div class="private-equity__content--right">
               <p class="private-equity__desc">
@@ -1309,10 +1314,10 @@
                   placeholder="e-mail"
                 /><span></span>
               </label>
-              <button class="contact__additionally active" id="additionally-btn" type="button">
+              <button class="contact__additionally" id="additionally-btn" type="button">
                 Дополнительно о компании
               </button>
-              <div class="contact__form-box" id="additionally-box">
+              <div class="contact__form-box active" id="additionally-box">
                 <label class="contact__label" for="revenue"
                   ><span class="placeholder">выручка за год</span>
                   <input
@@ -1321,10 +1326,11 @@
                     type="text"
                     name="revenue"
                     placeholder="выручка за год"
+                    required
                   /><span></span>
                 </label>
                 <label class="contact__label" for="industry">
-                  <select class="contact__select" id="industry" name="industry">
+                  <select class="contact__select" id="industry" name="industry" required>
                     <option>отрасль</option>
                     <option value="Экономика и учет">Экономика и учет</option>
                     <option value="Управленческая поддержка">Управленческая поддержка</option>
@@ -1338,6 +1344,7 @@
                     type="text"
                     name="investments"
                     placeholder="объем инвестиций"
+                    required
                   /><span></span>
                 </label>
                 <label class="contact__label" for="target"
@@ -1348,6 +1355,7 @@
                     type="text"
                     name="target"
                     placeholder="цель привлечения"
+                    required
                   /><span></span>
                 </label>
               </div>
@@ -1470,12 +1478,8 @@
             <nav class="footer__nav">
               <ul class="footer__nav-list">
                 <li class="footer__nav-item"><a class="footer__nav-link us-link" href="about">О нас</a></li>
-                <li class="footer__nav-item">
-                  <a class="footer__nav-link us-link" href="directions">Направления инвестирования</a>
-                </li>
                 <li class="footer__nav-item"><a class="footer__nav-link us-link" href="projects">Проекты</a></li>
                 <li class="footer__nav-item"><a class="footer__nav-link us-link" href="smartmoney">Smartmoney</a></li>
-                <li class="footer__nav-item"><a class="footer__nav-link us-link" href="news">Новости</a></li>
                 <li class="footer__nav-item"><a class="footer__nav-link us-link" href="contacts">Контакты</a></li>
               </ul>
             </nav>

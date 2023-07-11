@@ -59,6 +59,9 @@
             <li class="nav__item"><a class="nav__link us-link" href="contacts.html">Контакты</a></li>
           </ul>
           <a class="nav__tel us-link mobile" href="tel:+83433430661">8 (343) 343-06-61</a>
+          <div class="header__lang-box mobile">
+            <a class="header__lang active" href="#">ru</a><a class="header__lang" href="#">en</a>
+          </div>
           <div class="nav__img-box mobile">
             <svg width="375" height="250" viewbox="0 0 375 250" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g opacity="0.6">
@@ -124,6 +127,9 @@
           </div>
         </nav>
         <a class="header__tel us-link desktop" href="tel:+83433430661">8 (343) 343-06-61</a>
+        <div class="header__lang-box desktop">
+          <a class="header__lang active" href="#">ru</a><a class="header__lang" href="#">en</a>
+        </div>
         <button class="header__burger mobile" id="menu-open">
           <svg width="25" height="19">
             <use xlink:href="img/sprite.svg#burger"></use>
@@ -131,7 +137,82 @@
         </button>
       </div>
     </header>
-    <main></main>
+    <main>
+      <section class="error-404">
+        <span class="error-404__slogan slogan desktop">pro</span>
+        <div class="error-404__img-box">
+          <svg width="1920" height="601" viewbox="0 0 1920 601" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g opacity="0.6">
+              <path
+                d="M2131.05 48.981H135.33L530.906 599H-293.5"
+                stroke="url(#paint0_linear_941_74451)"
+                stroke-width="3"
+              ></path>
+              <path
+                d="M2127.78 25.4907H162.055L557.631 575.51H-295.999"
+                stroke="url(#paint1_linear_941_74451)"
+                stroke-width="3"
+              ></path>
+              <path
+                d="M2154.5 2.00049H188.778L584.354 552.02H-304"
+                stroke="url(#paint2_linear_941_74451)"
+                stroke-width="3"
+              ></path>
+            </g>
+            <defs>
+              <lineargradient
+                id="paint0_linear_941_74451"
+                x1="-333.513"
+                y1="28.981"
+                x2="2080.54"
+                y2="28.7935"
+                gradientunits="userSpaceOnUse"
+              >
+                <stop stop-color="#F34C58" stop-opacity="0"></stop>
+                <stop offset="0.666667" stop-color="#F34C58"></stop>
+                <stop offset="1" stop-color="#F3414E" stop-opacity="0"></stop>
+              </lineargradient>
+              <lineargradient
+                id="paint1_linear_941_74451"
+                x1="-335.999"
+                y1="5.49075"
+                x2="2077.28"
+                y2="5.30334"
+                gradientunits="userSpaceOnUse"
+              >
+                <stop stop-color="#F34C58" stop-opacity="0"></stop>
+                <stop offset="0.666667" stop-color="#F34C58"></stop>
+                <stop offset="1" stop-color="#F3414E" stop-opacity="0"></stop>
+              </lineargradient>
+              <lineargradient
+                id="paint2_linear_941_74451"
+                x1="-344.573"
+                y1="-17.9995"
+                x2="2103.28"
+                y2="-18.1923"
+                gradientunits="userSpaceOnUse"
+              >
+                <stop stop-color="#F34C58" stop-opacity="0"></stop>
+                <stop offset="0.666667" stop-color="#F34C58"></stop>
+                <stop offset="1" stop-color="#F3414E" stop-opacity="0"></stop>
+              </lineargradient>
+            </defs></svg
+          ><span>4</span>
+          <picture>
+            <source class="error-404__img" srcset="img/hero/cube.webp" />
+            <img class="error-404__img" src="img/hero/cube.webp" alt="Куб" />
+          </picture>
+          <picture>
+            <source class="error-404__img--shadow" srcset="img/hero/shadow.webp" />
+            <img class="error-404__img--shadow" src="img/hero/shadow.webp" alt="Тень" /> </picture
+          ><span>4</span>
+        </div>
+        <div class="error-404__content">
+          <p class="error-404__desc">Страница не найдена</p>
+          <a class="error-404__link us-btn" href="main.html">на главную</a>
+        </div>
+      </section>
+    </main>
     <footer class="footer">
       <div class="footer__box--top">
         <div class="footer__container container">
@@ -143,12 +224,8 @@
             <nav class="footer__nav">
               <ul class="footer__nav-list">
                 <li class="footer__nav-item"><a class="footer__nav-link us-link" href="about">О нас</a></li>
-                <li class="footer__nav-item">
-                  <a class="footer__nav-link us-link" href="directions">Направления инвестирования</a>
-                </li>
                 <li class="footer__nav-item"><a class="footer__nav-link us-link" href="projects">Проекты</a></li>
                 <li class="footer__nav-item"><a class="footer__nav-link us-link" href="smartmoney">Smartmoney</a></li>
-                <li class="footer__nav-item"><a class="footer__nav-link us-link" href="news">Новости</a></li>
                 <li class="footer__nav-item"><a class="footer__nav-link us-link" href="contacts">Контакты</a></li>
               </ul>
             </nav>

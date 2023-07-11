@@ -59,6 +59,9 @@
             <li class="nav__item"><a class="nav__link us-link" href="contacts.html">Контакты</a></li>
           </ul>
           <a class="nav__tel us-link mobile" href="tel:+83433430661">8 (343) 343-06-61</a>
+          <div class="header__lang-box mobile">
+            <a class="header__lang active" href="#">ru</a><a class="header__lang" href="#">en</a>
+          </div>
           <div class="nav__img-box mobile">
             <svg width="375" height="250" viewbox="0 0 375 250" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g opacity="0.6">
@@ -124,6 +127,9 @@
           </div>
         </nav>
         <a class="header__tel us-link desktop" href="tel:+83433430661">8 (343) 343-06-61</a>
+        <div class="header__lang-box desktop">
+          <a class="header__lang active" href="#">ru</a><a class="header__lang" href="#">en</a>
+        </div>
         <button class="header__burger mobile" id="menu-open">
           <svg width="25" height="19">
             <use xlink:href="img/sprite.svg#burger"></use>
@@ -354,10 +360,10 @@
                   placeholder="e-mail"
                 /><span></span>
               </label>
-              <button class="contact__additionally active" id="additionally-btn" type="button">
+              <button class="contact__additionally" id="additionally-btn" type="button">
                 Дополнительно о компании
               </button>
-              <div class="contact__form-box" id="additionally-box">
+              <div class="contact__form-box active" id="additionally-box">
                 <label class="contact__label" for="revenue"
                   ><span class="placeholder">выручка за год</span>
                   <input
@@ -366,10 +372,11 @@
                     type="text"
                     name="revenue"
                     placeholder="выручка за год"
+                    required
                   /><span></span>
                 </label>
                 <label class="contact__label" for="industry">
-                  <select class="contact__select" id="industry" name="industry">
+                  <select class="contact__select" id="industry" name="industry" required>
                     <option>отрасль</option>
                     <option value="Экономика и учет">Экономика и учет</option>
                     <option value="Управленческая поддержка">Управленческая поддержка</option>
@@ -383,6 +390,7 @@
                     type="text"
                     name="investments"
                     placeholder="объем инвестиций"
+                    required
                   /><span></span>
                 </label>
                 <label class="contact__label" for="target"
@@ -393,6 +401,7 @@
                     type="text"
                     name="target"
                     placeholder="цель привлечения"
+                    required
                   /><span></span>
                 </label>
               </div>
@@ -515,12 +524,8 @@
             <nav class="footer__nav">
               <ul class="footer__nav-list">
                 <li class="footer__nav-item"><a class="footer__nav-link us-link" href="about">О нас</a></li>
-                <li class="footer__nav-item">
-                  <a class="footer__nav-link us-link" href="directions">Направления инвестирования</a>
-                </li>
                 <li class="footer__nav-item"><a class="footer__nav-link us-link" href="projects">Проекты</a></li>
                 <li class="footer__nav-item"><a class="footer__nav-link us-link" href="smartmoney">Smartmoney</a></li>
-                <li class="footer__nav-item"><a class="footer__nav-link us-link" href="news">Новости</a></li>
                 <li class="footer__nav-item"><a class="footer__nav-link us-link" href="contacts">Контакты</a></li>
               </ul>
             </nav>

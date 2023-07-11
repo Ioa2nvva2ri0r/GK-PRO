@@ -59,6 +59,9 @@
             <li class="nav__item"><a class="nav__link us-link" href="contacts.html">Контакты</a></li>
           </ul>
           <a class="nav__tel us-link mobile" href="tel:+83433430661">8 (343) 343-06-61</a>
+          <div class="header__lang-box mobile">
+            <a class="header__lang active" href="#">ru</a><a class="header__lang" href="#">en</a>
+          </div>
           <div class="nav__img-box mobile">
             <svg width="375" height="250" viewbox="0 0 375 250" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g opacity="0.6">
@@ -124,6 +127,9 @@
           </div>
         </nav>
         <a class="header__tel us-link desktop" href="tel:+83433430661">8 (343) 343-06-61</a>
+        <div class="header__lang-box desktop">
+          <a class="header__lang active" href="#">ru</a><a class="header__lang" href="#">en</a>
+        </div>
         <button class="header__burger mobile" id="menu-open">
           <svg width="25" height="19">
             <use xlink:href="img/sprite.svg#burger"></use>
@@ -140,7 +146,8 @@
         <div class="hero__container container">
           <div class="hero__content--top" id="content-hero">
             <h1 class="hero__title us-title">
-              <span class="hero__title--red">SMART MONEY </span>для вашего <span class="underline">бизнеса</span>
+              <a class="hero__title--red" href="smartmoney.html">SMART MONEY </a>для вашего
+              <span class="underline">бизнеса</span>
             </h1>
             <div class="hero__img-box">
               <svg
@@ -284,29 +291,24 @@
               </picture>
               <ul class="hero__tabs">
                 <li class="hero__tab hero__tab-1">
-                  <span> </span>
-                  <button class="hero__tab-btn"><span></span></button>
-                  <p class="hero__tab-desc">SMART ПОДХОД</p>
+                  <span> </span> <button class="hero__tab-btn"><span></span></button
+                  ><a class="hero__tab-desc" href="smartmoney.html">SMART ПОДХОД</a>
                 </li>
                 <li class="hero__tab hero__tab-2">
-                  <span> </span>
-                  <button class="hero__tab-btn"><span></span></button>
-                  <p class="hero__tab-desc">SMART ПОДХОД</p>
+                  <span> </span> <button class="hero__tab-btn"><span></span></button
+                  ><a class="hero__tab-desc" href="smartmoney.html">SMART ПОДХОД</a>
                 </li>
                 <li class="hero__tab hero__tab-3">
-                  <span> </span>
-                  <button class="hero__tab-btn"><span></span></button>
-                  <p class="hero__tab-desc">SMART ПОДХОД</p>
+                  <span> </span> <button class="hero__tab-btn"><span></span></button
+                  ><a class="hero__tab-desc" href="smartmoney.html">SMART ПОДХОД</a>
                 </li>
                 <li class="hero__tab hero__tab-4">
-                  <span> </span>
-                  <button class="hero__tab-btn"><span></span></button>
-                  <p class="hero__tab-desc">SMART ПОДХОД</p>
+                  <span> </span> <button class="hero__tab-btn"><span></span></button
+                  ><a class="hero__tab-desc" href="smartmoney.html">SMART ПОДХОД</a>
                 </li>
                 <li class="hero__tab hero__tab-5">
-                  <span> </span>
-                  <button class="hero__tab-btn"><span></span></button>
-                  <p class="hero__tab-desc">SMART ПОДХОД</p>
+                  <span> </span> <button class="hero__tab-btn"><span></span></button
+                  ><a class="hero__tab-desc" href="smartmoney.html">SMART ПОДХОД</a>
                 </li>
               </ul>
               <span class="hero__slogan slogan desktop">pro</span>
@@ -349,7 +351,9 @@
       <section class="projects">
         <div class="projects__container container">
           <div class="projects__title-box">
-            <h2 class="projects__title us-title">Наши <span class="underline">проекты</span></h2>
+            <h2 class="projects__title us-title">
+              Наши <a href="projects.html"> <span class="underline">проекты</span></a>
+            </h2>
             <div class="projects__slider-btn-box">
               <button class="projects__slider-btn projects__slider-btn--prev us-btn-slider">
                 <svg width="20" height="16">
@@ -2437,10 +2441,10 @@
                   placeholder="e-mail"
                 /><span></span>
               </label>
-              <button class="contact__additionally active" id="additionally-btn" type="button">
+              <button class="contact__additionally" id="additionally-btn" type="button">
                 Дополнительно о компании
               </button>
-              <div class="contact__form-box" id="additionally-box">
+              <div class="contact__form-box active" id="additionally-box">
                 <label class="contact__label" for="revenue"
                   ><span class="placeholder">выручка за год</span>
                   <input
@@ -2449,10 +2453,11 @@
                     type="text"
                     name="revenue"
                     placeholder="выручка за год"
+                    required
                   /><span></span>
                 </label>
                 <label class="contact__label" for="industry">
-                  <select class="contact__select" id="industry" name="industry">
+                  <select class="contact__select" id="industry" name="industry" required>
                     <option>отрасль</option>
                     <option value="Экономика и учет">Экономика и учет</option>
                     <option value="Управленческая поддержка">Управленческая поддержка</option>
@@ -2466,6 +2471,7 @@
                     type="text"
                     name="investments"
                     placeholder="объем инвестиций"
+                    required
                   /><span></span>
                 </label>
                 <label class="contact__label" for="target"
@@ -2476,6 +2482,7 @@
                     type="text"
                     name="target"
                     placeholder="цель привлечения"
+                    required
                   /><span></span>
                 </label>
               </div>
@@ -2598,12 +2605,8 @@
             <nav class="footer__nav">
               <ul class="footer__nav-list">
                 <li class="footer__nav-item"><a class="footer__nav-link us-link" href="about">О нас</a></li>
-                <li class="footer__nav-item">
-                  <a class="footer__nav-link us-link" href="directions">Направления инвестирования</a>
-                </li>
                 <li class="footer__nav-item"><a class="footer__nav-link us-link" href="projects">Проекты</a></li>
                 <li class="footer__nav-item"><a class="footer__nav-link us-link" href="smartmoney">Smartmoney</a></li>
-                <li class="footer__nav-item"><a class="footer__nav-link us-link" href="news">Новости</a></li>
                 <li class="footer__nav-item"><a class="footer__nav-link us-link" href="contacts">Контакты</a></li>
               </ul>
             </nav>

@@ -50,54 +50,39 @@ if (document.querySelector('.history__slider')) {
       nextSlideMessage: 'Вперёд',
     },
   });
-  var getEvery = function getEvery(arr, gap) {
-    return Array.from(
-      {
-        length: Math.floor(arr.length / gap),
-      },
-      function (_, i) {
-        return arr[i * gap + gap - 1];
-      }
-    );
-  };
-  var slidesHistory = document.querySelectorAll('.history__slide');
+  var slidesHistory = $('.history__slide');
   if (window.screen.width <= 768) {
-    slidesHistory.forEach(function (el, index, arr) {
-      el.addEventListener('click', function () {
-        var prevEl = el.previousElementSibling;
-        var firstElIndex = index !== 0;
-        var endElIndex = index !== Array.from(arr).length - 1;
-        if (prevEl && prevEl.classList.contains('active') && endElIndex) {
-          swiperMassHistory.slideNext();
-        }
-        if (el.classList.contains('active') && firstElIndex && endElIndex) {
-          swiperMassHistory.slidePrev();
-        }
-        arr.forEach(function (el) {
-          return el.classList.remove('active');
+    slidesHistory.each(function (index) {
+      $(this).on('click', function () {
+        slidesHistory.each(function () {
+          $(this).removeClass('active');
         });
-        el.classList.add('active');
+        $(this).addClass('active');
+        swiperMassHistory.slideTo(index);
+      });
+    });
+    $('.history__slider-btn--prev').on('click', function () {
+      var active = $('.history__slide.active');
+      active.prev().addClass('active');
+      slidesHistory.each(function () {
+        $(this).not(active.prev()).removeClass('active');
+      });
+    });
+    $('.history__slider-btn--next').on('click', function () {
+      var active = $('.history__slide.active');
+      active.next().addClass('active');
+      slidesHistory.each(function () {
+        $(this).not(active.next()).removeClass('active');
       });
     });
   } else {
-    var everyFourStart = getEvery(slidesHistory, 4);
-    var everyFourEnd = getEvery(Array.from(slidesHistory).reverse(), 4);
-    everyFourStart.forEach(function (el) {
-      el.addEventListener('mouseenter', function () {
-        swiperMassHistory.slideNext();
-      });
-    });
-    everyFourEnd.forEach(function (el) {
-      el.addEventListener('mouseenter', function () {
-        swiperMassHistory.slidePrev();
-      });
-    });
-    document.querySelectorAll('.history__year').forEach(function (el, index) {
-      el.addEventListener('mouseenter', function () {
-        slidesHistory.forEach(function (el) {
-          return el.classList.remove('active');
+    $('.history__year').each(function (index) {
+      $(this).on('mouseenter', function () {
+        slidesHistory.each(function () {
+          $(this).removeClass('active');
         });
-        slidesHistory[index].classList.add('active');
+        slidesHistory.eq(index).addClass('active');
+        swiperMassHistory.slideTo(index - 1);
       });
     });
   }
@@ -176,6 +161,14 @@ if (document.querySelector('.articles__slider')) {
 $('#menu-open').on('click', function () {
   $('#menu').toggleClass('active');
 });
+$('.header__lang').each(function () {
+  $(this).on('click', function () {
+    $('.header__lang').each(function () {
+      $(this).removeClass('active');
+    });
+    $(this).addClass('active');
+  });
+});
 if (document.querySelector('.hero__slider')) {
   document.addEventListener('DOMContentLoaded', function () {
     var bannerVideo = document.getElementById('banner-video');
@@ -200,6 +193,7 @@ if (document.querySelector('.hero__slider')) {
       }
     } else bannerVideo.remove();
   });
+  $('html').addClass('main');
   $('.hero__btn').on('click', function (e) {
     e.preventDefault();
     $('html, body').animate(
@@ -259,16 +253,11 @@ if (document.querySelector('.hero__slider')) {
       var scroll = Math.sign(delta);
       var first = $('.investment__tab').first().hasClass('swiper-slide-active');
       var last = $('.investment__tab').last().hasClass('swiper-slide-active');
-
-      // if (first) {
-      //   console.log(scroll === -1);
-      //   if (scroll === -1) swiperInvestment.mousewheel.disable();
-      //   else swiperInvestment.mousewheel.enable();
-      // }
-      // console.log(scroll);
-
-      if (scroll === -1 || scroll === 1) e.preventDefault ? e.preventDefault() : (e.returnValue = false);
-      else return;
+      if ((scroll === -1 && first) || (scroll === 1 && last)) {
+        swiperInvestment.mousewheel.disable();
+        return;
+      } else swiperInvestment.mousewheel.enable();
+      return e.preventDefault ? e.preventDefault() : (e.returnValue = false);
     };
     var swiperInvestment = new Swiper(
       '.investment__slider',
@@ -284,8 +273,12 @@ if (document.querySelector('.hero__slider')) {
       _defineProperty(_Swiper, 'on', {
         scroll: function scroll(swiper, e) {
           $('.investment__tab-btn').each(function () {
-            $(this).removeClass('active left');
+            $(this).removeClass('active');
           });
+          if (!$('.investment__tab').last().hasClass('swiper-slide-active'))
+            setTimeout(function () {
+              $('.investment__tab-btn.left').removeClass('left');
+            }, 400);
           $('.investment__tab')
             .not('.swiper-slide-active')
             .each(function () {
@@ -336,14 +329,16 @@ if (document.querySelector('.hero__slider')) {
       });
     });
   }
+} else {
+  $('html').removeClass('main');
 }
 if ($('#additionally-btn').length !== 0) {
   $('#additionally-btn').on('click', function () {
     $(this).toggleClass('active');
     $('#additionally-box').toggleClass('active');
-    $(function () {
-      $('#industry').selectmenu();
-    });
+  });
+  $(function () {
+    $('#industry').selectmenu();
   });
 }
 ymaps.ready(init);
@@ -449,20 +444,15 @@ if (document.querySelector('.projects-main__tab')) {
     },
   });
   $('.projects-main__card').each(function () {
-    $(this).on('mouseover', function () {
-      if ($(this).parent().next().children(this).hasClass('active')) {
-        swiperProjectsMain.slidePrev();
-      } else if ($(this).parent().prev().children(this).hasClass('active')) {
-        swiperProjectsMain.slideNext();
-      }
+    $(this).on('click', function () {
+      if ($('.projects-main__content').hasClass('hidden')) $('.projects-main__content').removeClass('hidden');
+      if ($(this).parent().next().children(this).hasClass('active')) swiperProjectsMain.slidePrev();
+      else if ($(this).parent().prev().children(this).hasClass('active')) swiperProjectsMain.slideNext();
       $('.projects-main__content-box, .projects-main__card').each(function () {
-        $(this).removeClass('active');
+        $(this).removeClass('active hover');
       });
       $(this).addClass('active hover');
       $('#'.concat($(this).data('project'))).addClass('active');
-    });
-    $(this).on('mouseout', function () {
-      $(this).removeClass('hover');
     });
   });
 }
@@ -509,19 +499,24 @@ if ($('.smartmoney-investment').length !== 0) {
     .children('.smartmoney-investment__dropdown-box')
     .children('.smartmoney-investment__dropdown-btn');
   var dropdownAll = $('.smartmoney-investment__dropdown--all');
+  var tabContainer = $('.smartmoney-investment__tab-container');
   if (window.screen.width < 768)
-    $('.smartmoney-investment__tab-container').css({
+    tabContainer.css({
       'grid-row': '2',
     });
   $('.smartmoney-investment__tab').each(function (index) {
     $(this).on('click', function () {
+      if (tabContainer.hasClass('hidden')) {
+        tabContainer.removeClass('hidden');
+        tabContainer.slideDown();
+      }
       $('.smartmoney-investment__tab, .smartmoney-investment__tab-box').each(function () {
         $(this).removeClass('active');
       });
       $(this).addClass('active');
       $("[data-tab-smartmoney='".concat($(this).attr('id'), "']")).addClass('active');
       if (window.screen.width < 768)
-        $('.smartmoney-investment__tab-container').css({
+        tabContainer.css({
           'grid-row': ''.concat(index + 2),
         });
       dropdownBtn = $('.smartmoney-investment__tab-box.active')
