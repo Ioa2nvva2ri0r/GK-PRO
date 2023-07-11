@@ -7289,11 +7289,6 @@ input[type='search']::-webkit-search-results-decoration {
   padding-bottom: 10rem;
   padding-left: 50rem;
 }
-.projects-main__slider-wrapper {
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
 .projects-main__slider-box {
   -webkit-user-select: none;
   -moz-user-select: none;

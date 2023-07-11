@@ -429,20 +429,22 @@ if (document.querySelector('.projects-main__tab')) {
   var swiperProjectsMain = new Swiper('.projects-main__slider', {
     speed: 800,
     loop: true,
-    observer: true,
-    slidesPerView: 4,
+    mousewheel: {
+      sensitivity: 5,
+    },
     breakpoints: {
       769: {
-        slidesPerView: 4,
-        spaceBetween: '-50%',
+        slidesPerView: 8,
+        // spaceBetween: '5%',
       },
+
       100: {
-        initialSlide: 5,
-        slidesPerView: 4,
-        spaceBetween: '-16%',
+        slidesPerView: 5,
+        // spaceBetween: '-16%',
       },
     },
   });
+
   $('.projects-main__card').each(function () {
     $(this).on('click', function () {
       if ($('.projects-main__content').hasClass('hidden')) $('.projects-main__content').removeClass('hidden');
